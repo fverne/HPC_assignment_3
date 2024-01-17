@@ -57,10 +57,10 @@ extern "C" {
         num_teams(_TEAMS) thread_limit(_THREADS) collapse(2)
         for(int i=0;i<m;i++){
             for(int l=0;l<k;l++){
-                for(int j=0;j<n;j++){
-                    #pragma omp atomic
-                    C[i][j] += A[i][l]*B[l][j];
-                }
+                double sum = 0;
+                for (int j=0;j<n;j++)
+                    sum += A[i][j]*B[j][l];
+                C[i][l] = sum;  
             }
         }
         // t2 = omp_get_wtime();
