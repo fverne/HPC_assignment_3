@@ -5,15 +5,20 @@ extern "C" {
 
     void 
     matmult_mkn_omp(int m,int n,int k,double **A,double **B,double **C) {
-        // initialize C with 0's
-        // for(int i = 0; i < m; i++)
-        //     for(int j = 0; j < n; j++)
-        //         C[i][j] = 0;
+        for(int i = 0; i < m; i++)
+            for(int j = 0; j < n; j++)
+                C[i][j] = 0;
 
-        // #pragma omp target parallel
-        // {
-        //     printf("hello from thread %d\n", omp_get_thread_num());
-        // } // end target parallel
+        #pragma omp parallel for default(none) shared(m, n, k, A, B, C)
+        for(int i = 0; i < m; i++) {
+            for(int l = 0; l < k; l++) {
+                double sum = 0;
+                for(int j = 0; j < n; j++) {
+                    sum += A[i][l] * B[l][j];
+                }
+                C[i][l] = sum;
+            }
+        }
     }
 
     void
