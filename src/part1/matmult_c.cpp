@@ -69,6 +69,22 @@ extern "C" {
 
     void 
     matmult_mnk_offload(int m, int n, int k, double **A, double **B, double**C) {
+        // double t1, t2;
+        // t1 = omp_get_wtime();
+        for(int i = 0; i < m; i++)
+            for(int j = 0; j < n; j++)
+                C[i][j] = 0;
 
+        #pragma omp target teams distribute parallel for \
+        map (to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n]) \
+        num_teams(_TEAMS) thread_limit(_THREADS) collapse(2)
+        for(int i=0;i<m;i++){
+            for (int j=0;j<n;j++){
+                double sum = 0;
+                for(int l=0;l<k;l++)
+                    sum += A[i][l]*B[l][j];
+                C[i][j] = sum;
+            }
+        }
     }
 }
