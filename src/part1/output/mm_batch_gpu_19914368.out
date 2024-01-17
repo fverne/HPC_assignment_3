@@ -1,0 +1,85 @@
+./matmult_c.nvc++: error while loading shared libraries: libmatmult.so: cannot open shared object file: No such file or directory
+./matmult_c.nvc++: error while loading shared libraries: libmatmult.so: cannot open shared object file: No such file or directory
+./matmult_c.nvc++: error while loading shared libraries: libmatmult.so: cannot open shared object file: No such file or directory
+./matmult_c.nvc++: error while loading shared libraries: libmatmult.so: cannot open shared object file: No such file or directory
+./matmult_c.nvc++: error while loading shared libraries: libmatmult.so: cannot open shared object file: No such file or directory
+./matmult_c.nvc++: error while loading shared libraries: libmatmult.so: cannot open shared object file: No such file or directory
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19914368: <mm_batch_gpu> in cluster <dcc> Exited
+
+Job <mm_batch_gpu> was submitted from host <n-62-11-46> by user <s173394> in cluster <dcc> at Wed Jan 17 14:05:15 2024
+Job was executed on host(s) <32*n-62-12-88>, in queue <hpcintrogpu>, as user <s173394> in cluster <dcc> at Wed Jan 17 14:05:17 2024
+</zhome/97/7/126506> was used as the home directory.
+</zhome/97/7/126506/02614/assignments/HPC_assignment_3/src/part1> was used as the working directory.
+Started at Wed Jan 17 14:05:17 2024
+Terminated at Wed Jan 17 14:05:19 2024
+Results reported at Wed Jan 17 14:05:19 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+# 02614 - High-Performance Computing, January 2024
+# 
+# batch script to run matmult on a dedicated GPU server in the hpcintrogpu
+# queue
+#
+# Author: Bernd Dammann <bd@cc.dtu.dk>
+#         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
+#
+#BSUB -J mm_batch_gpu
+#BSUB -o output/mm_batch_gpu_%J.out
+#BSUB -q hpcintrogpu
+#BSUB -n 32
+#BSUB -R "rusage[mem=2048]"
+#BSUB -W 15
+#BSUB -R "span[hosts=1]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+
+# define the driver name to use
+# valid values: matmult_c.nvc++, matmult_f.nvc++
+#
+EXECUTABLE=matmult_c.nvc++
+
+# define the mkn values in the MKN variable
+#
+SIZES="100 200 500 1000 2000 5000"
+
+# define the method type in TYPE
+#
+TYPE="mkn_omp"
+
+# enable(1)/disable(0) result checking
+export MATMULT_COMPARE=0
+
+# load module for shared cuda libraries
+module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
+
+# start the collect command with the above settings
+for S in $SIZES
+do
+    ./$EXECUTABLE $TYPE $S $S $S
+done
+
+------------------------------------------------------------
+
+Exited with exit code 127.
+
+Resource usage summary:
+
+    CPU time :                                   0.55 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     65536.00 MB
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              -
+    Max Threads :                                -
+    Run time :                                   3 sec.
+    Turnaround time :                            4 sec.
+
+The output (if any) is above this job summary.
+
