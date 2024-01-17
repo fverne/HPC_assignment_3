@@ -4,6 +4,10 @@ OBJS	= matmult_c.o
 CC	= nvc
 CXX	= nvc++
 
+# Variables
+TEAMS=16384
+THREADS=16
+
 OPT	= -g -fast -Msafeptr -Minfo -mp=gpu -gpu=pinned -gpu=lineinfo -gpu=cc90 -cuda -mp=noautopar -cudalib=cublas
 PIC   = -fpic -shared
 ISA	=
@@ -11,7 +15,10 @@ PARA	=
 INC   =
 LIBS	=
 
-CXXFLAGS= $(OPT) $(PIC) $(INC) $(ISA) $(PARA) $(XOPT)
+# DEFINEs in source code
+DEFS = -D_TEAMS=$(TEAMS) -D_THREADS=$(THREADS)
+
+CXXFLAGS= $(OPT) $(PIC) $(INC) $(ISA) $(PARA) $(XOPT) $(DEFS)
 
 all: $(TARGET)
 
