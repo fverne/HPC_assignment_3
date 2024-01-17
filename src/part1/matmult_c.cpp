@@ -95,7 +95,10 @@ extern "C" {
         for(int bi = 0; bi < m; bi++) 
             for(int bj = 0; bj < n; bj++) 
                 C[bi][bj] = 0;
-
+        
+        #pragma omp target teams loop \
+        map (to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n]) \
+        num_teams(_TEAMS) thread_limit(_THREADS) collapse(2)
         for(int bi = 0; bi < m; bi += bs) {
             for(int bj = 0; bj < n; bj += bs) {
                 for(int bl = 0; bl < k; bl += bs) {
