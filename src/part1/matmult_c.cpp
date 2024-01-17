@@ -11,6 +11,8 @@ extern "C" {
     #define _THREADS 16
     #endif
 
+    #define min(a,b) (((a)<(b))?(a):(b))
+
     void 
     matmult_mkn_omp(int m,int n,int k,double **A,double **B,double **C) {
         // double t1, t2;
@@ -86,5 +88,26 @@ extern "C" {
                 C[i][j] = sum;
             }
         }
+    }
+
+    void 
+    matmult_blk_offload(int m, int n, int k, double **A,double **B, double **C, int bs) {
+        for(int bi = 0; bi < m; bi++) 
+            for(int bj = 0; bj < n; bj++) 
+                C[bi][bj] = 0;
+
+        for(int bi = 0; bi < m; bi += bs) {
+            for(int bj = 0; bj < n; bj += bs) {
+                for(int bl = 0; bl < k; bl += bs) {
+                    for(int i = 0; i < min(m-bi, bs); i++) {
+                        for(int j = 0; j < min(n-bj, bs); j++)
+                            for(int l = 0; l < min(k-bl, bs); l++) {
+                            C[bi+i][bj+j] += A[bi+i][bl+l]*B[bl+l][bj+j];
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
