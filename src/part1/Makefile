@@ -7,9 +7,9 @@ CXX	= nvc++
 # Variables
 TEAMS=114
 THREADS=16
-BLK_SIZE=16
+BLK_SIZE=4
 
-OPT	= -g -fast -Msafeptr -Minfo -mp=gpu -gpu=pinned -gpu=lineinfo -gpu=cc90 -cuda -mp=noautopar -cudalib=cublas
+OPT	= -g -fast -Msafeptr -Minfo -mp=gpu -gpu=pinned -gpu=lineinfo -gpu=cc90 -cuda -mp=noautopar -cudalib=cublas 
 PIC   = -fpic -shared
 ISA	=
 PARA	=
