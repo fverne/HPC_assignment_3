@@ -15,6 +15,10 @@ extern "C" {
     #define _BLK_SIZE 16
     #endif
 
+    #ifndef _SLABS
+    #define _SLABS 4
+    #endif
+
     #define min(a,b) (((a)<(b))?(a):(b))
 
     void 
@@ -125,5 +129,10 @@ extern "C" {
                 }
             }
         }
+    }
+
+    void 
+    matmult_asy_offload(int m, int n, int k, double **A, double **B, double **C) {
+
     }
 }

@@ -8,6 +8,7 @@ CXX	= nvc++
 TEAMS=114
 THREADS=16
 BLK_SIZE=4
+SLABS=4
 
 OPT	= -g -fast -Msafeptr -Minfo -mp=gpu -gpu=pinned -gpu=lineinfo -gpu=cc90 -cuda -mp=noautopar -cudalib=cublas 
 PIC   = -fpic -shared
@@ -17,7 +18,7 @@ INC   =
 LIBS	=
 
 # DEFINEs in source code
-DEFS = -D_TEAMS=$(TEAMS) -D_THREADS=$(THREADS) -D_BLK_SIZE=$(BLK_SIZE)
+DEFS = -D_TEAMS=$(TEAMS) -D_THREADS=$(THREADS) -D_BLK_SIZE=$(BLK_SIZE) -D_SLABS=$(SLABS)
 
 CXXFLAGS= $(OPT) $(PIC) $(INC) $(ISA) $(PARA) $(XOPT) $(DEFS)
 
