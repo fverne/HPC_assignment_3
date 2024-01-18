@@ -1,8 +1,9 @@
+#include <cuda_runtime.h>
+#include <cublas_v2.h>
 extern "C" {
     #include <cblas.h>
     #include <omp.h>
     #include <stdio.h>
-    #include <cublas_v2.h>
 
     #ifndef _TEAMS
     #define _TEAMS 114
@@ -165,6 +166,27 @@ extern "C" {
 
     void 
     matmult_lib_offload(int m, int n, int k, double **A, double **B, double **C) {
+       cublasHandle_t handle;
+       cublasCreate(&handle);
 
+       double *d_A, *d_B, *d_C;
+       cudaMalloc((void **)&d_A, m * k * sizeof(double));
+       cudaMalloc((void **)&d_B, k * n * sizeof(double));
+       cudaMalloc((void **)&d_C, m * n * sizeof(double));
+
+       cudaMemcpy(d_A, *A, m * k * sizeof(double), cudaMemcpyHostToDevice);
+       cudaMemcpy(d_B, *B, k * n * sizeof(double), cudaMemcpyHostToDevice);
+
+       double alpha = 1.0;
+       double beta = 0.0;
+
+       cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, d_A, m, d_B, k, &beta, d_C, m);
+
+       cudaMemcpy(*C, d_C, m * n * sizeof(double), cudaMemcpyDeviceToDevice);
+
+       cudaFree(d_A);
+       cudaFree(d_B);
+       cudaFree(d_C);
+       cublasDestroy(handle);
     }
 }
