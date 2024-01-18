@@ -2,6 +2,7 @@ extern "C" {
     #include <cblas.h>
     #include <omp.h>
     #include <stdio.h>
+    #include <cublas_v2.h>
 
     #ifndef _TEAMS
     #define _TEAMS 114
@@ -160,5 +161,10 @@ extern "C" {
         } 
         #pragma omp taskwait // wait on the completion of child tasks
         #pragma omp target exit data map(delete: A[0:m][0:k], B[0:k][0:n], C[0:m][0:n])
+    }
+
+    void 
+    matmult_lib_offload(int m, int n, int k, double **A, double **B, double **C) {
+
     }
 }
