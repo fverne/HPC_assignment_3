@@ -95,7 +95,7 @@ extern "C" {
     }
 
     void 
-    matmult_blk_offload(int m, int n, int k, double **A,double **B, double **C, int bs) {
+    matmult_blk_offload(int m, int n, int k, double **A,double **B, double **C) {
         for(int bi = 0; bi < m; bi++) 
             for(int bj = 0; bj < n; bj++) 
                 C[bi][bj] = 0;
@@ -103,18 +103,27 @@ extern "C" {
         #pragma omp target teams loop \
         map (to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n]) \
         num_teams(_TEAMS) thread_limit(_THREADS) collapse(2)
-        for(int bi = 0; bi < m; bi += bs) {
-            for(int bj = 0; bj < n; bj += bs) {
-                for(int bl = 0; bl < k; bl += bs) {
-                    for(int i = 0; i < min(m-bi, bs); i++) {
-                        for(int j = 0; j < min(n-bj, bs); j++)
-                            for(int l = 0; l < min(k-bl, bs); l++) {
-                            C[bi+i][bj+j] += A[bi+i][bl+l]*B[bl+l][bj+j];
+        for (int i1 = 0; i1 < m; i1 += _BLK_SIZE) {
+            for (int j = 0; j < n; j++) {
+                int i2, l;
+                if (i1 + _BLK_SIZE - 1 < m) {
+                    double sum[_BLK_SIZE] = {0};
+                    for(l = 0; l < k; l++) {   
+                        for(i2 = 0; i2 < _BLK_SIZE; i2++){
+                            sum[i2] += A[i1+i2][l] * B[l][j];
+                        }
+                    }
+                    for (int i = 0; i < _BLK_SIZE; i++){
+                        C[i1 + i][j] = sum[i];
+                    }
+                } else { 
+                    for(l = 0;l < k; l++){   
+                        for(i2 = 0; i2 < (m - i1); i2++){
+                            C[i1+i2][j] += A[i1+i2][l]*B[l][j];
                         }
                     }
                 }
             }
         }
-
     }
 }
