@@ -4,11 +4,15 @@ extern "C" {
     #include <stdio.h>
 
     #ifndef _TEAMS
-    #define _TEAMS 16384
+    #define _TEAMS 114
     #endif
 
     #ifndef _THREADS
     #define _THREADS 16
+    #endif
+
+    #ifndef _BLK_SIZE 
+    #define _BLK_SIZE 16
     #endif
 
     #define min(a,b) (((a)<(b))?(a):(b))
