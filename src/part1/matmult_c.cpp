@@ -58,25 +58,20 @@ extern "C" {
     // offload
     void 
     matmult_mkn_offload(int m, int n, int k, double **A, double **B, double**C) {
-        // double t1, t2;
-        // t1 = omp_get_wtime();
         for(int i = 0; i < m; i++)
             for(int j = 0; j < n; j++)
                 C[i][j] = 0;
 
         #pragma omp target teams distribute parallel for \
         map (to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n]) \
-        num_teams(_TEAMS) thread_limit(_THREADS) collapse(2)
-        for(int i=0;i<m;i++){
-            for(int l=0;l<k;l++){
-                double sum = 0;
-                for (int j=0;j<n;j++)
-                    sum += A[i][j]*B[j][l];
-                C[i][l] = sum;  
+        num_teams(_TEAMS) thread_limit(_THREADS) // you cannot use collapse for mkn, that's why it is not optimal for GPU
+        for(int i = 0; i < m; i++){
+            for(int l = 0; l < k; l++){
+                for (int j = 0; j < n; j++) {
+                    C[i][j] += A[i][l]*B[l][j]; // data race here 
+                }
             }
         }
-        // t2 = omp_get_wtime();
-        // printf("Time with transfer: %f\n", 1e3*(t2-t1));
     }
 
     void 
@@ -86,6 +81,7 @@ extern "C" {
         for(int i = 0; i < m; i++)
             for(int j = 0; j < n; j++)
                 C[i][j] = 0;
+        // Measure transfer time
 
         #pragma omp target teams distribute parallel for \
         map (to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n]) \
