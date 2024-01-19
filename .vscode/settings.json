@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "functional": "cpp",
+        "iterator": "cpp",
+        "hash_map": "cpp"
+    }
+}
