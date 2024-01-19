@@ -35,7 +35,7 @@ extern "C" {
         for(int i = 0; i < m; i++) {
             for(int l = 0; l < k; l++) {
                 for(int j = 0; j < n; j++) {
-                    #pragma omp atomic
+                    // #pragma omp atomic
                     C[i][j] += A[i][l] * B[l][j];
                 }
             }
