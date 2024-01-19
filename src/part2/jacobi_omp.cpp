@@ -9,7 +9,7 @@
 // See which version is better from the previous ones (fix the old version)
 int jacobi_omp(
   double ***u_curr, double ***u_prev, double ***f, 
-  int N, int iter_max, double tolerance) {
+  int N, int iter_max) {
   int iter = 0;
   double delta = 2.0 / (N - 1);
   

@@ -9,6 +9,6 @@
 
 int jacobi_expand(
     double ***u_curr, double ***u_prev, double ***f, 
-    int N, int iter_max);
+    int N, int iter_max, double tolerance);
 
 #endif /* _JACOBI_EXPAND_H */
