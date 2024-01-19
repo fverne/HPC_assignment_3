@@ -2,3 +2,5 @@
 */output
 *.o
 *.so
+.vscode
+original_files

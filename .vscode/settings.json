@@ -2,6 +2,7 @@
     "files.associations": {
         "functional": "cpp",
         "iterator": "cpp",
-        "hash_map": "cpp"
+        "hash_map": "cpp",
+        "ranges": "cpp"
     }
 }
