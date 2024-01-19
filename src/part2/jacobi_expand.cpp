@@ -1,4 +1,4 @@
-/* jacobi_omp.c - Poisson problem in 3d with omp
+/* jacobi_expand.c - Poisson problem in 3d with omp
  *
  */
 #include "jacobi_expand.h"

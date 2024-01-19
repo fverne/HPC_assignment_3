@@ -30,9 +30,11 @@ double ***malloc_3d(int m, int n, int k) {
   return p;
 }
 
-double ***malloc_3d_device(int m, int n, int k, double **a_data) {
-  
-  int dev_num = omp_get_default_device();
+
+double ***malloc_3d_device(int m, int n, int k, double **a_data, int dev_num) {
+
+  // divisor is when for example we want to allocate half of the data in one device and half of the other
+  // data to the other device
   if (m <= 0 || n <= 0 || k <= 0)
   {
     std::cerr << "Error: Out of range." << std::endl;
@@ -78,11 +80,13 @@ void free_3d(double ***p) {
 void free_3d_device(int argc, ...) {
   va_list argv;
   int dev_num = omp_get_default_device();
+  std::cout << "Log: Default device: " << dev_num << std::endl;
   va_start(argv, argc);
   
   for (int i = 0; i < argc; i++) {
       double ***p = va_arg(argv, double***);
       if (p != NULL) {
+          std::cout << "Log: Freeing..." << std::endl;
           #pragma omp target is_device_ptr(p)
           {
               omp_target_free(p, dev_num);

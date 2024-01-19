@@ -21,6 +21,7 @@ int jacobi(double ***u_curr, double ***u_prev, double ***f, int N,
     // Maximum number of threads per block = 1024 
     // thread_limit =
     // num_teams = 114 (as multiprocessors)
+    // 
     // Collapse (3) --> 3 nested loops
     // Try rounding up to 128 for oversubscription to hide latency
     // 1024 -> thread limit per team (try 512 as well)

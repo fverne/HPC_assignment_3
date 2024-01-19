@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define NUM_TEAMS 128
+#define THREAD_LIMIT 1024
+
 #define pow2(x) (x) * (x)
 #define f(x, y, z)                                                             \
   ((-1 <= x && x <= (-3.0 / 8) && -1 <= y && y <= (-1.0 / 2) &&                \
