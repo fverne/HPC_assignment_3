@@ -30,7 +30,7 @@ EXECUTABLE=matmult_c.nvc++
 # define the mkn values in the MKN variable
 #
 SIZES="100 200 500 1000 2000 5000"
-THREADS="4 6 8 10 12 14 16"
+THREADS="1 2 4 6 8 10 12 14 16"
 
 # define the method type in TYPE
 #

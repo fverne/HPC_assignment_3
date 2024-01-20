@@ -18,7 +18,7 @@ mkdir -p $OUTDIR
 #BSUB -q hpcintrogpu
 #BSUB -n 32
 #BSUB -R "rusage[mem=2048]"
-#BSUB -W 15
+#BSUB -W 30
 #BSUB -R "span[hosts=1]"
 #BSUB -gpu "num=1:mode=exclusive_process"
 
@@ -30,8 +30,8 @@ EXECUTABLE=matmult_c.nvc++
 # define the mkn values in the MKN variable
 #
 SIZES="100 200 500 1000 2000 5000"
-THREADS="1 2 4 6 8 10 12 14 16 20 24 28 32"
-TEAMS="64 108 256 512 700 1024 2024 4096 8192 16384 32768"
+THREADS="1 2 4 6 8 10 12 14 16 24 32"
+TEAMS="64 128 256 512 700 1024 2024 4096 8192 16384 32768"
 
 # define the method type in TYPE
 #
@@ -48,6 +48,14 @@ make clean && make
 # Compare mkn_omp & mkn_offload
 # Use the data in q1
 
+for THREAD in $THREADS; do
+    make clean
+    make TEAMS=114 THREADS=$THREAD
+    for TYPE in $TYPE; do
+        echo "$(./$EXECUTABLE $TYPE 1000 1000 1000)" >> $OUTDIR/TEAM_114_THREAD_$THREAD-$TYPE.dat
+    done
+done
+
 # Number of teams for both mkn & mnk
 THREAD=16
 for TEAM in $TEAMS; do
@@ -61,7 +69,7 @@ for TEAM in $TEAMS; do
 done
 
 # THREADS per TEAMS for both mkn & mnk
-TEAM=1024 
+TEAM=114 
 for THREAD in $THREADS; do
     make clean
     make TEAMS=$TEAM THREADS=$THREAD
@@ -71,3 +79,4 @@ for THREAD in $THREADS; do
         done
     done
 done
+
