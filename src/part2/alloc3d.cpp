@@ -65,7 +65,7 @@ double ***malloc_3d_device(int m, int n, int k, double **a_data, int dev_num)
   double *a = (double *)omp_target_alloc(m * n * k * sizeof(double), dev_num);
   if (a == NULL)
   {
-    free_3d_device(1, p);
+    free_3d_device(dev_num, 1, p);
     std::cerr << "Error: Failed to allocate memory using omp_target_alloc." << std::endl;
     return NULL;
   }
@@ -85,11 +85,10 @@ void free_3d(double ***p)
   free(p);
 }
 
-void free_3d_device(int argc, ...)
+void free_3d_device(int dev_num, int argc, ...)
 {
+  std::cout << "Log: Device number: " << dev_num << std::endl;
   va_list argv;
-  int dev_num = omp_get_default_device();
-  std::cout << "Log: Default device: " << dev_num << std::endl;
   va_start(argv, argc);
 
   for (int i = 0; i < argc; i++)
@@ -97,7 +96,6 @@ void free_3d_device(int argc, ...)
     double ***p = va_arg(argv, double ***);
     if (p != NULL)
     {
-      std::cout << "Log: Freeing..." << std::endl;
       #pragma omp target is_device_ptr(p)
       {
         omp_target_free(p, dev_num);

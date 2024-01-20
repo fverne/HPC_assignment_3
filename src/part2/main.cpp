@@ -405,9 +405,9 @@ double ***solve_alloc(int N, int iter_max, double start_T)
   std::cout << "Log: Finished copying data back to host from device 0 ..." << std::endl;
 
   std::cout << "Log: Freeing device memory ..." << std::endl;
-  free_3d_device(2, u_curr, a_u_curr, 0);
-  free_3d_device(2, u_prev, a_u_prev, 0);
-  free_3d_device(2, f, a_f, 0);
+  free_3d_device(0, 2, u_curr, a_u_curr, 0);
+  free_3d_device(0, 2, u_prev, a_u_prev, 0);
+  free_3d_device(0, 2, f, a_f, 0);
   std::cout << "Log: Freeing device memory finished..." << std::endl;
 
   std::cout << "Log: Jacobi allocation" << std::endl;
@@ -550,17 +550,17 @@ double ***solve_dup(int N, int iter_max, double start_T)
   exec_time = ftime - itime;
 
   std::cout << "Log: Copying data back to host" << std::endl;
-  omp_target_memcpy(u_curr_values[0][0], a_u_curr_0, (N / 2) * N * N * sizeof(double), 0, 0, 0, omp_get_default_device());
-  omp_target_memcpy(u_curr_values[0][0], a_u_curr_1, (N / 2) * N * N * sizeof(double), (N / 2) * N * N * sizeof(double), 0, 1, omp_get_default_device());
+  omp_target_memcpy(u_curr_values[0][0], a_u_curr_0, (N / 2) * N * N * sizeof(double), 0, 0, omp_get_initial_device(), 0);
+  omp_target_memcpy(u_curr_values[0][0], a_u_curr_1, (N / 2) * N * N * sizeof(double), (N / 2) * N * N * sizeof(double), 0,  omp_get_initial_device(), 1);
   std::cout << "Log: Finished copying data back to host from device 0 ..." << std::endl;
 
   std::cout << "Log: Freeing device memory ..." << std::endl;
-  free_3d_device(2, u_curr_0, a_u_curr_0, 0);
-  free_3d_device(2, u_curr_1, a_u_curr_1, 0);
-  free_3d_device(2, u_prev_0, a_u_prev_0, 0);
-  free_3d_device(2, u_prev_1, a_u_prev_1, 0);
-  free_3d_device(2, f_0, a_f_0, 0);
-  free_3d_device(2, f_1, a_f_1, 0);
+  free_3d_device(0, 2, u_curr_0, a_u_curr_0, 0);
+  free_3d_device(1, 2, u_curr_1, a_u_curr_1, 0);
+  free_3d_device(0, 2, u_prev_0, a_u_prev_0, 0);
+  free_3d_device(1, 2, u_prev_1, a_u_prev_1, 0);
+  free_3d_device(0, 2, f_0, a_f_0, 0);
+  free_3d_device(1, 2, f_1, a_f_1, 0);
   std::cout << "Log: Freeing device memory finished..." << std::endl;
 
   std::cout << "Log: Disabling peer-to-peer access..." << std::endl;
