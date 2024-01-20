@@ -45,7 +45,29 @@ extern "C" {
     }
 
     void
+    matmult_nat(int m, int n, int k, double **A, double **B, double **C) {
+        // initialize C with 0's
+        double t1, t2;
+        t1 = omp_get_wtime();
+        for(int i = 0; i < m; i++)
+            for(int j = 0; j < n; j++)
+                C[i][j] = 0;
+
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                for(int l = 0; l < k; l++) {
+                    C[i][j] += A[i][l] * B[l][j];
+                }
+            }
+        }
+        t2 = omp_get_wtime();
+        printf("Time: %f\t", 1e3*(t2-t1));
+    }
+
+    void
     matmult_lib(int m, int n, int k, double **A, double **B, double**C) {
+        double t1, t2;
+        t1 = omp_get_wtime();
         double alpha = 1.0;
         double beta = 0.0;
 
@@ -53,6 +75,8 @@ extern "C" {
         m, n, k, 
         alpha, *A, k, 
         *B, n, beta, *C, n);
+        t2 = omp_get_wtime();
+        printf("Time: %f\t", 1e3*(t2-t1));
     }
 
     // offload
@@ -169,27 +193,32 @@ extern "C" {
 
     void 
     matmult_lib_offload(int m, int n, int k, double **A, double **B, double **C) {
-       cublasHandle_t handle;
-       cublasCreate(&handle);
+        double t1, t2;
+        t1 = omp_get_wtime();
+        cublasHandle_t handle;
+        cublasCreate(&handle);
 
-       double *d_A, *d_B, *d_C;
-       cudaMalloc((void **)&d_A, m * k * sizeof(double));
-       cudaMalloc((void **)&d_B, k * n * sizeof(double));
-       cudaMalloc((void **)&d_C, m * n * sizeof(double));
+        double *d_A, *d_B, *d_C;
+        cudaMalloc((void **)&d_A, m * k * sizeof(double));
+        cudaMalloc((void **)&d_B, k * n * sizeof(double));
+        cudaMalloc((void **)&d_C, m * n * sizeof(double));
 
-       cudaMemcpy(d_A, *A, m * k * sizeof(double), cudaMemcpyHostToDevice);
-       cudaMemcpy(d_B, *B, k * n * sizeof(double), cudaMemcpyHostToDevice);
+        cudaMemcpy(d_A, *A, m * k * sizeof(double), cudaMemcpyHostToDevice);
+        cudaMemcpy(d_B, *B, k * n * sizeof(double), cudaMemcpyHostToDevice);
 
-       double alpha = 1.0;
-       double beta = 0.0;
+        double alpha = 1.0;
+        double beta = 0.0;
 
-       cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, d_A, m, d_B, k, &beta, d_C, m);
+        cublasDgemm(handle, CUBLAS_OP_N, CUBLAS_OP_N, m, n, k, &alpha, d_A, m, d_B, k, &beta, d_C, m);
 
-       cudaMemcpy(*C, d_C, m * n * sizeof(double), cudaMemcpyDeviceToDevice);
+        cudaMemcpy(*C, d_C, m * n * sizeof(double), cudaMemcpyDeviceToDevice);
 
-       cudaFree(d_A);
-       cudaFree(d_B);
-       cudaFree(d_C);
-       cublasDestroy(handle);
+        cudaFree(d_A);
+        cudaFree(d_B);
+        cudaFree(d_C);
+        cublasDestroy(handle);
+
+        t2 = omp_get_wtime();
+        printf("Time: %f\t", 1e3*(t2-t1));
     }
 }
