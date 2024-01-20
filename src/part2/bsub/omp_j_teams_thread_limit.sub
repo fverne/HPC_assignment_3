@@ -45,7 +45,7 @@ cd ..
 for TEAM in $NUM_TEAMS; do
     for THREAD in $THREAD_LIMIT; do
         make clean
-        make -j $MAKE_THREADS THREAD_LIMIT=$THREAD NUM_TEAMS=$TEAM
+        make -j $MAKE_THREADS THREAD_LIMIT=$THREAD NUM_TEAMS=$TEAM > /dev/null 2>&1
         ./$EXECUTABLE $N_DEFAULT $ITER_MAX $TOLERANCE $START_VALUE $EXTRA_ARGS 
     done    
 done
