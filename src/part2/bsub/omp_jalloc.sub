@@ -7,9 +7,9 @@
 # Author: Bernd Dammann <bd@cc.dtu.dk>
 #         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
 #
-#BSUB -J omp_jomp
-#BSUB -o output/omp_jomp_%J.out
-#BSUB -e output/omp_jexpand_%J.err
+#BSUB -J omp_jalloc
+#BSUB -o output/omp_jalloc_%J.out
+#BSUB -e output/omp_jalloc_%J.err
 #BSUB -q hpcintrogpu
 #BSUB -n 32
 #BSUB -R "rusage[mem=2048]"

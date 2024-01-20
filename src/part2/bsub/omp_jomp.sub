@@ -9,7 +9,7 @@
 #
 #BSUB -J omp_jomp
 #BSUB -o output/omp_jomp_%J.out
-#BSUB -e output/omp_jexpand_%J.err
+#BSUB -e output/omp_jomp_%J.err
 #BSUB -q hpcintrogpu
 #BSUB -n 32
 #BSUB -R "rusage[mem=2048]"
