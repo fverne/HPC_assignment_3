@@ -42,28 +42,28 @@ int jacobi_dup(double ***u_curr_0, double ***u_prev_0, double ***f_0, double ***
         }
     // Swap pointers on the host
     // Wait for both gpu tasks to finish
-    // #pragma omp taskwait
+    #pragma omp taskwait
 
-    double ***tmp = u_prev_0;
+    double ***tmp_0 = u_prev_0;
     u_prev_0 = u_curr_0;
-    u_curr_0 = tmp;
+    u_curr_0 = tmp_0;
 
-    tmp = u_prev_1;
+    double ***tmp_1 = u_prev_1;
     u_prev_1 = u_curr_1;
-    u_curr_1 = tmp;
+    u_curr_1 = tmp_1; 
 
   }
 
   // Check the odd / even of iterations
   if (iter % 2 == 0)
   {
-    double ***tmp = u_prev_0;
+    double ***tmp_0 = u_prev_0;
     u_prev_0 = u_curr_0;
-    u_curr_0 = tmp;
+    u_curr_0 = tmp_0;
 
-    tmp = u_prev_1;
+    double ***tmp_1 = u_prev_1;
     u_prev_1 = u_curr_1;
-    u_curr_1 = tmp;
+    u_curr_1 = tmp_1;
   }
 
   return iter;
