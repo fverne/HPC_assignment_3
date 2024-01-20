@@ -39,8 +39,6 @@ int jacobi(double ***u_curr, double ***u_prev, double ***f, int N,
     double ***tmp = u_prev;           
     u_prev = u_curr;
     u_curr = tmp;
-
-    ++iter;
   }
 
   // check the odd/even of iterations

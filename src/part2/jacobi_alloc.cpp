@@ -11,7 +11,7 @@ int jacobi_alloc(double ***u_curr, double ***u_prev, double ***f, int N, int max
   double delta_2 = pow2(delta);
 
   for (iter = 0; iter < max_iterations; iter++) {     
-    #pragma omp target teams distribute parallel for collapse(3) is_device_ptr(u_prev, u_curr, f) num_teams(NUM_TEAMS) thread_limit(THREAD_LIMIT)
+    #pragma omp target teams distribute parallel for collapse(3) is_device_ptr(u_prev, u_curr, f) num_teams(_NUM_TEAMS) thread_limit(_THREAD_LIMIT) device(0)
     for (int i = 1; i < N - 1; i++)
       for (int j = 1; j < N - 1; j++)
         for (int k = 1; k < N - 1; k++) {
@@ -25,8 +25,6 @@ int jacobi_alloc(double ***u_curr, double ***u_prev, double ***f, int N, int max
     double ***tmp = u_prev;           
     u_prev = u_curr;
     u_curr = tmp;
-
-    ++iter;
   }
 
   // Check the odd / even of iterations

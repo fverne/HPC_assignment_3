@@ -32,7 +32,7 @@
 #define N_DEFAULT 40
 #define ITER_DEFAULT 1000
 
-double*** solve_base(int N, int iter_max, double tolerance, int start_T)
+double ***solve_base(int N, int iter_max, double tolerance, int start_T)
 {
   double ***u_curr = NULL;
   double ***u_prev = NULL;
@@ -91,7 +91,7 @@ double*** solve_base(int N, int iter_max, double tolerance, int start_T)
   return u_curr;
 }
 
-double*** solve_omp(int N, int iter_max, double tolerance, int start_T)
+double ***solve_omp(int N, int iter_max, double tolerance, int start_T)
 {
   double ***u_curr = NULL;
   double ***u_prev = NULL;
@@ -150,7 +150,7 @@ double*** solve_omp(int N, int iter_max, double tolerance, int start_T)
   return u_curr;
 }
 
-double*** solve_expand(int N, int iter_max, double tolerance, int start_T)
+double ***solve_expand(int N, int iter_max, double tolerance, int start_T)
 {
   double ***u_curr = NULL;
   double ***u_prev = NULL;
@@ -193,7 +193,7 @@ double*** solve_expand(int N, int iter_max, double tolerance, int start_T)
   initialize_u(u_prev, N, start_T);
   initialize_f(f, N);
   std::cout << "Log: Initializing arrays on host finished..." << std::endl;
-  
+
   itime = omp_get_wtime();
 
 #ifdef _JACOBI_EXPAND
@@ -211,7 +211,7 @@ double*** solve_expand(int N, int iter_max, double tolerance, int start_T)
   return u_curr;
 }
 
-double*** solve_dist(int N, int iter_max, double tolerance, int start_T)
+double ***solve_dist(int N, int iter_max, double tolerance, int start_T)
 {
   double ***u_curr = NULL;
   double ***u_prev = NULL;
@@ -273,7 +273,7 @@ double*** solve_dist(int N, int iter_max, double tolerance, int start_T)
   return u_curr;
 }
 
-double*** solve_alloc(int N, int iter_max, double start_T)
+double ***solve_alloc(int N, int iter_max, double start_T)
 {
   double ***u_curr = NULL;
   double ***u_prev = NULL;
@@ -348,11 +348,24 @@ double*** solve_alloc(int N, int iter_max, double start_T)
   // **Ignore** Function signature:
   // omp_target_memcpy(void *dst, void *src, size_t length, size_t dst_offset, size_t src_offset, int dst_dev_num, int src_dev_num);
   std::cout << "Log: Memcpying on device 0 ..." << std::endl;
-  omp_target_memcpy(a_u_curr, u_curr_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
-  omp_target_memcpy(a_u_prev, u_prev_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
-  omp_target_memcpy(a_f, f_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
+  if (omp_target_memcpy(a_u_curr, u_curr_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init) != 0)
+  {
+    std::cerr << "Error: Memcpy to a_u_curr failed" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  if (omp_target_memcpy(a_u_prev, u_prev_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init) != 0)
+  {
+    std::cerr << "Error: Memcpy to a_u_prev failed" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  if (omp_target_memcpy(a_f, f_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init) != 0)
+  {
+    std::cerr << "Error: Memcpy to a_f failed" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+
   std::cout << "Log: Finished memcpying on device 0 ..." << std::endl;
- 
+
   itime = omp_get_wtime();
 
 #ifdef _JACOBI_ALLOC
@@ -379,7 +392,7 @@ double*** solve_alloc(int N, int iter_max, double start_T)
   return u_curr_values;
 }
 
-double*** solve_dup(int N, int iter_max, double start_T)
+double ***solve_dup(int N, int iter_max, double start_T)
 {
   double ***u_curr = NULL;
   double ***u_prev = NULL;
@@ -465,7 +478,7 @@ double*** solve_dup(int N, int iter_max, double start_T)
   omp_target_memcpy(a_u_prev, u_prev_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
   omp_target_memcpy(a_f, f_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
   std::cout << "Log: Finished memcpying on device 0 ..." << std::endl;
-  
+
   itime = omp_get_wtime();
 
 #ifdef _JACOBI_DUP
@@ -511,7 +524,7 @@ void main(int argc, char *argv[])
   char *output_ext = "";
   char output_filename[FILENAME_MAX];
   double ***u_curr = NULL;
-  
+
   // get the parameters from the command line
   N = atoi(argv[1]); // grid size, the number of total
   // grid points in one dimension
@@ -528,7 +541,7 @@ void main(int argc, char *argv[])
 
 #ifdef _JACOBI_ALLOC
   output_prefix = "jacobi_alloc";
-  u_curr =  solve_alloc(N, iter_max, start_T);
+  u_curr = solve_alloc(N, iter_max, start_T);
 #endif
 
 #ifdef _JACOBI_OMP
@@ -551,25 +564,25 @@ void main(int argc, char *argv[])
   u_curr = solve_dup(N, iter_max, start_T);
 #endif
 
-  switch (output_type) {
-    case 0:
-      break;
-    case 3:
-      output_ext = ".bin";
-      sprintf(output_filename, "%s_N%d_T%.8f_I%d%s", output_prefix, N, tolerance,
-              iter_max, output_ext);
-      fprintf(stderr, "Wrote binary dump to %s\n.", output_filename);
-      print_binary(output_filename, N, u_curr);
-      break;
-    case 4:
-      output_ext = ".vtk";
-      sprintf(output_filename, "%s_N%d_T%.8f_I%d%s", output_prefix, N, tolerance,
-              iter_max, output_ext);
-      fprintf(stderr, "Wrote VTK file to %s.\n", output_filename);
-      print_vtk(output_filename, N, u_curr);
-      break;
-    default:
-      fprintf(stderr, "Non-supported output type!\n");
-      break;
-  }
+  // switch (output_type) {
+  //   case 0:
+  //     break;
+  //   case 3:
+  //     output_ext = ".bin";
+  //     sprintf(output_filename, "%s_N%d_T%.8f_I%d%s", output_prefix, N, tolerance,
+  //             iter_max, output_ext);
+  //     fprintf(stderr, "Wrote binary dump to %s\n.", output_filename);
+  //     print_binary(output_filename, N, u_curr);
+  //     break;
+  //   case 4:
+  //     output_ext = ".vtk";
+  //     sprintf(output_filename, "%s_N%d_T%.8f_I%d%s", output_prefix, N, tolerance,
+  //             iter_max, output_ext);
+  //     fprintf(stderr, "Wrote VTK file to %s.\n", output_filename);
+  //     print_vtk(output_filename, N, u_curr);
+  //     break;
+  //   default:
+  //     fprintf(stderr, "Non-supported output type!\n");
+  //     break;
+  // }
 }

@@ -4,8 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NUM_TEAMS 128
-#define THREAD_LIMIT 1024
+// Default values for num_teams and threads according to the hardware
+
+#ifndef _NUM_TEAMS
+#define _NUM_TEAMS 128
+#endif
+
+#ifndef _THREAD_LIMIT
+#define _THREAD_LIMIT 1024
+#endif
 
 #define pow2(x) (x) * (x)
 #define f(x, y, z)                                                             \

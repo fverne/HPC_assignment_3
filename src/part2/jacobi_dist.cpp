@@ -13,7 +13,7 @@ int jacobi_dist(double ***u_curr, double ***u_prev, double ***f, int N,
     distance = 0;
     #pragma omp target data map(to : u_prev[0 : N][0 : N][0 : N], f[0 : N][0 : N][0 : N]) map(tofrom : u_curr[0 : N][0 : N][0 : N])
     // Check if 128 + 1024 is optimal
-    #pragma omp target teams num_teams(NUM_TEAMS) thread_limit(THREAD_LIMIT) distribute parallel for reduction(+ : distance) collapse(3)
+    #pragma omp target teams num_teams(_NUM_TEAMS) thread_limit(_THREAD_LIMIT) distribute parallel for reduction(+ : distance) collapse(3)
     for (int i = 1; i < N - 1; i++) {
       for (int j = 1; j < N - 1; j++) {
         for (int k = 1; k < N - 1; k++) {

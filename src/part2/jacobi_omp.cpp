@@ -28,7 +28,6 @@ int jacobi_omp(
     double ***tmp = u_prev;           
     u_prev = u_curr;
     u_curr = tmp;
-    ++iter;
   } 
 
   // check the odd/even of iterations
