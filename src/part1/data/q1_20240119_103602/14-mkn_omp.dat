@@ -1,0 +1,6 @@
+     234.375   7571.074 # matmult_mkn_omp
+     937.500   8494.693 # matmult_mkn_omp
+    5859.375   8887.848 # matmult_mkn_omp
+   23437.500   8963.506 # matmult_mkn_omp
+   93750.000   8817.065 # matmult_mkn_omp
+  585937.500   8038.213 # matmult_mkn_omp
