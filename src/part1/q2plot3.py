@@ -53,10 +53,10 @@ plt.plot(thread_numbers, data_mnk_offload[0, :], label=labels_mnk_offload[0], li
 
 plt.plot(thread_numbers, data_mkn_offload[0, :], label=labels_mkn_offload[0], linestyle='--', color=mkn_offload_colors[0])
 
-plt.xlabel('Grid Sizes')
+plt.xlabel('Threads')
 plt.xscale("log")
 plt.ylabel('MFlops/s [Seconds]')
-plt.title('Comparison of Various Thread Numbers for Teams=114')
+plt.title('Comparison threads for Teams=114 and Size=1000')
 plt.grid(True)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.xticks(thread_numbers, labels=thread_numbers)  # Display thread numbers on the x-axis

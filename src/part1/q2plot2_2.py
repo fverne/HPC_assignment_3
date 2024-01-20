@@ -135,40 +135,37 @@ iterations_mkn_offload_18_teams = [  1710.906,
 
 
 # Various team numbers
-team_numbers = [1, 2, 4, 6, 8, 10, 12, 14, 16]
 team_numbers = [64, 128, 256, 512, 700, 1024, 2024, 4096, 8192, 16384]
 
 # Get unique labels for each combination of implementation and team number
-labels_mnk_offload = [f'mnk_offload - {n} team(s)' for n in team_numbers]
-labels_mkn_offload = [f'mkn_offload - {n} team(s)' for n in team_numbers]
+labels_mnk_offload = [f'mnk_offload' for n in team_numbers]
+labels_mkn_offload = [f'mkn_offload' for n in team_numbers]
 labels = labels_mnk_offload + labels_mkn_offload
 
 # Reshape the data for bar plotting
-data_mnk_offload = np.array([iterations_mnk_offload_1_team, iterations_mnk_offload_2_teams, iterations_mnk_offload_4_teams,
-                         iterations_mnk_offload_6_teams, iterations_mnk_offload_8_teams, iterations_mnk_offload_10_teams,
-                         iterations_mnk_offload_12_teams, iterations_mnk_offload_14_teams, iterations_mnk_offload_16_teams, iterations_mnk_offload_18_teams])
-data_mkn_offload = np.array([iterations_mkn_offload_1_team, iterations_mkn_offload_2_teams, iterations_mkn_offload_4_teams,
-                     iterations_mkn_offload_6_teams, iterations_mkn_offload_8_teams, iterations_mkn_offload_10_teams,
-                     iterations_mkn_offload_12_teams, iterations_mkn_offload_14_teams, iterations_mkn_offload_16_teams, iterations_mkn_offload_18_teams])
+data_mnk_offload = np.array([iterations_mnk_offload_1_team[3], iterations_mnk_offload_2_teams[3], iterations_mnk_offload_4_teams[3],
+                         iterations_mnk_offload_6_teams[3], iterations_mnk_offload_8_teams[3], iterations_mnk_offload_10_teams[3],
+                         iterations_mnk_offload_12_teams[3], iterations_mnk_offload_14_teams[3], iterations_mnk_offload_16_teams[3], iterations_mnk_offload_18_teams[3]])
+data_mkn_offload = np.array([iterations_mkn_offload_1_team[3], iterations_mkn_offload_2_teams[3], iterations_mkn_offload_4_teams[3],
+                     iterations_mkn_offload_6_teams[3], iterations_mkn_offload_8_teams[3], iterations_mkn_offload_10_teams[3],
+                     iterations_mkn_offload_12_teams[3], iterations_mkn_offload_14_teams[3], iterations_mkn_offload_16_teams[3], iterations_mkn_offload_18_teams[3]])
 
 
 # Plotting with shades of blue for mnk_offload and shades of red for mkn_offload
 mnk_offload_colors = plt.cm.Blues(np.linspace(0.3, 1, len(team_numbers)))
 mkn_offload_colors = plt.cm.Reds(np.linspace(0.3, 1, len(team_numbers)))
 
-for i in range(len(team_numbers)):
-    plt.plot(grid_sizes, data_mnk_offload[i, :], label=labels_mnk_offload[i], linestyle='-', color=mnk_offload_colors[i])
+plt.plot(team_numbers, data_mnk_offload, label=labels_mnk_offload[0], linestyle='-', color=mnk_offload_colors[0])
+plt.plot(team_numbers, data_mkn_offload, label=labels_mkn_offload[0], linestyle='--', color=mkn_offload_colors[0])
 
-for i in range(len(team_numbers)):
-    plt.plot(grid_sizes, data_mkn_offload[i, :], label=labels_mkn_offload[i], linestyle='--', color=mkn_offload_colors[i])
-
-plt.xlabel('Grid Sizes')
+plt.xlabel('Teams')
 plt.xscale("log")
 plt.ylabel('MFlops/s [Seconds]')
-plt.title('Comparison between teams for Threads=16')
+plt.title('Comparison between teams for Threads=16, Size=1000')
 plt.grid(True)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.xticks(team_numbers, labels=team_numbers)  # Display thread numbers on the x-axis
 plt.xticks(rotation=45)  # Rotate x-axis labels for better visibility
 plt.tight_layout()  # Adjust layout to prevent cropping of labels
-plt.savefig("plots/q2plot2")
+plt.savefig("plots/q2plot2_2")
 plt.show()

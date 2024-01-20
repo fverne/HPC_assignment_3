@@ -121,36 +121,35 @@ iterations_mkn_offload_16_threads = [ 1693.511,
 thread_numbers = [1, 2, 4, 6, 8, 10, 12, 14, 16]
 
 # Get unique labels for each combination of implementation and thread number
-labels_mnk_offload = [f'mnk_offload - {n} thread(s)' for n in thread_numbers]
-labels_mkn_offload = [f'mkn_offload - {n} thread(s)' for n in thread_numbers]
+labels_mnk_offload = [f'mnk_offload' for n in thread_numbers]
+labels_mkn_offload = [f'mkn_offload' for n in thread_numbers]
 labels = labels_mnk_offload + labels_mkn_offload
 
 # Reshape the data for bar plotting
-data_mnk_offload = np.array([iterations_mnk_offload_1_thread, iterations_mnk_offload_2_threads, iterations_mnk_offload_4_threads,
-                         iterations_mnk_offload_6_threads, iterations_mnk_offload_8_threads, iterations_mnk_offload_10_threads,
-                         iterations_mnk_offload_12_threads, iterations_mnk_offload_14_threads, iterations_mnk_offload_16_threads])
-data_mkn_offload = np.array([iterations_mkn_offload_1_thread, iterations_mkn_offload_2_threads, iterations_mkn_offload_4_threads,
-                     iterations_mkn_offload_6_threads, iterations_mkn_offload_8_threads, iterations_mkn_offload_10_threads,
-                     iterations_mkn_offload_12_threads, iterations_mkn_offload_14_threads, iterations_mkn_offload_16_threads])
+data_mnk_offload = np.array([iterations_mnk_offload_1_thread[3], iterations_mnk_offload_2_threads[3], iterations_mnk_offload_4_threads[3],
+                         iterations_mnk_offload_6_threads[3], iterations_mnk_offload_8_threads[3], iterations_mnk_offload_10_threads[3],
+                         iterations_mnk_offload_12_threads[3], iterations_mnk_offload_14_threads[3], iterations_mnk_offload_16_threads[3]])
+data_mkn_offload = np.array([iterations_mkn_offload_1_thread[3], iterations_mkn_offload_2_threads[3], iterations_mkn_offload_4_threads[3],
+                     iterations_mkn_offload_6_threads[3], iterations_mkn_offload_8_threads[3], iterations_mkn_offload_10_threads[3],
+                     iterations_mkn_offload_12_threads[3], iterations_mkn_offload_14_threads[3], iterations_mkn_offload_16_threads[3]])
 
 
 # Plotting with shades of blue for mnk_offload and shades of red for mkn_offload
 mnk_offload_colors = plt.cm.Blues(np.linspace(0.3, 1, len(thread_numbers)))
 mkn_offload_colors = plt.cm.Reds(np.linspace(0.3, 1, len(thread_numbers)))
 
-for i in range(len(thread_numbers)):
-    plt.plot(grid_sizes, data_mnk_offload[i, :], label=labels_mnk_offload[i], linestyle='-', color=mnk_offload_colors[i])
+plt.plot(thread_numbers, data_mnk_offload, label=labels_mnk_offload[0], linestyle='-', color=mnk_offload_colors[0])
+plt.plot(thread_numbers, data_mkn_offload, label=labels_mkn_offload[0], linestyle='--', color=mkn_offload_colors[0])
 
-for i in range(len(thread_numbers)):
-    plt.plot(grid_sizes, data_mkn_offload[i, :], label=labels_mkn_offload[i], linestyle='--', color=mkn_offload_colors[i])
-
-plt.xlabel('Grid Sizes')
+plt.xlabel('Thread Amount')
 plt.xscale("log")
+# plt.yscale("log")
 plt.ylabel('MFlops/s [Seconds]')
-plt.title('Comparison between threads for Teams=1024')
+plt.title('Comparison between threads for Teams=1024, Size=1000')
 plt.grid(True)
 plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.xticks(thread_numbers, labels=thread_numbers)  # Display thread numbers on the x-axis
 plt.xticks(rotation=45)  # Rotate x-axis labels for better visibility
 plt.tight_layout()  # Adjust layout to prevent cropping of labels
-plt.savefig("plots/q2plot1")
+plt.savefig("plots/q2plot1_2")
 plt.show()
