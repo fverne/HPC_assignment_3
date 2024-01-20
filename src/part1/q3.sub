@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# experiments name
+EXPNAME=q3_$(date +%Y%m%d_%H%M%S)
+OUTDIR=./output/$EXPNAME
+mkdir -p $OUTDIR
+
+# 02614 - High-Performance Computing, January 2024
+# 
+# batch script to run matmult on a dedicated GPU server in the hpcintrogpu
+# queue
+#
+# Author: Bernd Dammann <bd@cc.dtu.dk>
+#         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
+#
+#BSUB -J q3
+#BSUB -o output/mm_batch_gpu_%J.out
+#BSUB -q hpcintrogpu
+#BSUB -n 32
+#BSUB -R "rusage[mem=2048]"
+#BSUB -W 60
+#BSUB -R "span[hosts=1]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -u s232242@dtu.dk
+#BSUB -B 
+#BSUB -N 
+
+# define the driver name to use
+# valid values: matmult_c.nvc++, matmult_f.nvc++
+#
+EXECUTABLE=matmult_c.nvc++
+
+# define the mkn values in the MKN variable
+#
+SIZES="100 200 500 1000 2000 5000"
+THREADS="4 6 8 10 12 14 16"
+BLKSIZES="4 8 12 16 20 24 28 32"
+
+# define the method type in TYPE
+#
+TYPE="blk_offload"
+
+# enable(1)/disable(0) result checking
+export MATMULT_COMPARE=0
+
+# load module for shared cuda libraries
+module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
+
+
+# Experiement with the number of elements (block size) computed per thread and report your eﬀorts.
+# Data about Block Size
+S=1024
+for BS in $BLKSIZES; do
+    make clean
+    # make TEAMS=$TEAM THREADS=$THREAD 
+    make BLK_SIZE=$BS
+    echo -n "$BS ">> $OUTDIR/BLKSZ.dat
+    echo "$(./$EXECUTABLE $TYPE $S $S $S)" >> $OUTDIR/BLKSZ.dat
+done

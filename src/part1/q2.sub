@@ -14,7 +14,8 @@ mkdir -p $OUTDIR
 #         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
 #
 #BSUB -J q2
-#BSUB -o output/mm_batch_gpu_%J.out
+#BSUB -o output/q2_%J.out
+#BSUB -e output/q2_%J.err
 #BSUB -q hpcintrogpu
 #BSUB -n 32
 #BSUB -R "rusage[mem=2048]"
@@ -30,44 +31,47 @@ EXECUTABLE=matmult_c.nvc++
 # define the mkn values in the MKN variable
 #
 SIZES="100 200 500 1000 2000 5000"
-THREADS="1 2 4 6 8 10 12 14 16 20 24 28 32"
+THREADS="4 6 8 10 12 14 16 20 24 28 32"
 TEAMS="64 108 256 512 700 1024 2024 4096 8192 16384 32768"
 
 # define the method type in TYPE
 #
-TYPE="mkn_offload mnk_offload"
+TYPES="mkn_offload mnk_offload"
 
 # enable(1)/disable(0) result checking
 export MATMULT_COMPARE=0
+export MFLOPS_MAX_IT=1
 
 # load module for shared cuda libraries
 module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
 
 make clean && make 
-
 # Compare mkn_omp & mkn_offload
 # Use the data in q1
-
 # Number of teams for both mkn & mnk
 THREAD=16
-for TEAM in $TEAMS; do
-    make clean
-    make TEAMS=$TEAM THREADS=$THREAD
-    for TYPE in $TYPE; do
+for TYPE in $TYPES; do
+    OUT=$OUTDIR/TEAM-$TYPE.dat
+    for TEAM in $TEAMS; do
+        make clean && make TEAMS=$TEAM THREADS=$THREAD
+        echo $TEAM " " >> $OUT
         for S in $SIZES; do
-            echo "$(./$EXECUTABLE $TYPE $S $S $S)" >> $OUTDIR/TEAM_$TEAM-$TYPE.dat
+            echo -n $S " " >> $OUT
+            echo "$(./$EXECUTABLE $TYPE $S $S $S)" >> $OUT
         done
     done
 done
 
 # THREADS per TEAMS for both mkn & mnk
 TEAM=1024 
-for THREAD in $THREADS; do
-    make clean
-    make TEAMS=$TEAM THREADS=$THREAD
-    for TYPE in $TYPE; do
+for TYPE in $TYPES; do
+    OUT=$OUTDIR/THRD-$TYPE.dat
+    for THREAD in $THREADS; do
+        make clean && make TEAMS=$TEAM THREADS=$THREAD
+        echo $THREAD " " >> $OUT
         for S in $SIZES; do
-            echo "$(./$EXECUTABLE $TYPE $S $S $S)" >> $OUTDIR/THREAD_$THREAD-$TYPE.dat
+            echo -n $S " " >> $OUT
+            echo "$(./$EXECUTABLE $TYPE $S $S $S)" >> $OUT
         done
     done
 done

@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# experiments name
+EXPNAME=q4_$(date +%Y%m%d_%H%M%S)
+OUTDIR=./output/$EXPNAME
+mkdir -p $OUTDIR
+
+# 02614 - High-Performance Computing, January 2024
+# 
+# batch script to run matmult on a dedicated GPU server in the hpcintrogpu
+# queue
+#
+# Author: Bernd Dammann <bd@cc.dtu.dk>
+#         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
+#
+#BSUB -J q4
+#BSUB -o output/mm_batch_gpu_%J.out
+#BSUB -q hpcintrogpu
+#BSUB -n 32
+#BSUB -R "rusage[mem=2048]"
+#BSUB -W 60
+#BSUB -R "span[hosts=1]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+
+# define the driver name to use
+# valid values: matmult_c.nvc++, matmult_f.nvc++
+#
+EXECUTABLE=matmult_c.nvc++
+
+# define the mkn values in the MKN variable
+#
+SIZES="100 200 500 1000 2000 3000 4000 5000"
+THREADS="4 6 8 10 12 14 16"
+
+# enable(1)/disable(0) result checking
+export MATMULT_COMPARE=0
+
+# load module for shared cuda libraries
+module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
+
+
+# PLOT: Measure transfer time of mnk with different size
+# PLOT: Compare total time with mnk & mnk_asy 
+# PLOT: Compare performace (Flpos) between mnk & mnk_asy
+# `asy_offload` will print total running time
+# `mnk_offload` will print both transfering time & total running time
+make clean 
+make
+TYPES="mnk_offload asy_offload"
+for S in $SIZES; do
+    for T in $TYPES; do
+        echo -n "$S ">> $OUTDIR/$T.dat
+        echo "$(MFLOPS_MAX_IT=1 ./$EXECUTABLE $T $S $S $S)" >> $OUTDIR/$T.dat
+    done
+done
