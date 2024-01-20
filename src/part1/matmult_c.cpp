@@ -144,18 +144,14 @@ extern "C" {
         double t1, t2;
         t1 = omp_get_wtime();
 
-        #pragma omp target enter data map(alloc: A[0:m][0:k], B[0:k][0:n], C[0:m][0:n])
-        #pragma omp target update to(B[0:k][0:n]) 
-        
         #pragma omp parallel for // parallel for each slab
         for (int s = 0; s < _SLABS; ++s) {
             int slab_len = m / _SLABS; 
             int begin = s * slab_len;
 
-            #pragma omp target update to(A[begin:slab_len][0:k], C[begin:slab_len][0:n])  nowait
             #pragma omp target teams distribute parallel for collapse(2) nowait \
-            depend(in: A[begin:slab_len][0:k], B[0:k][0:n]) \
-            depend(out:C[begin:slab_len][0:n])
+            map (to: A[begin:slab_len][0:k], B[0:k][0:n]) \
+            map (from:C[begin:slab_len][0:n])
             for(int i = begin; i < begin + slab_len; i++) {
                 for (int j = 0; j < n; j++) {
                     double sum = 0;
@@ -164,10 +160,8 @@ extern "C" {
                     C[i][j] = sum;
                 }
             }
-        #pragma omp target update from(C[begin:slab_len][0:n]) nowait
         } 
-        #pragma omp taskwait // wait on the completion of child tasks
-        #pragma omp target exit data map(delete: A[0:m][0:k], B[0:k][0:n], C[0:m][0:n])
+        #pragma omp taskwait 
 
         t2 = omp_get_wtime();
         printf("Time: %f\t", 1e3*(t2-t1));
