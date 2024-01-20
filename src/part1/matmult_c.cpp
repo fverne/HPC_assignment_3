@@ -72,28 +72,38 @@ extern "C" {
                 }
             }
         }
+
     }
 
     void 
     matmult_mnk_offload(int m, int n, int k, double **A, double **B, double**C) {
-        // double t1, t2;
-        // t1 = omp_get_wtime();
         for(int i = 0; i < m; i++)
             for(int j = 0; j < n; j++)
                 C[i][j] = 0;
-        // Measure transfer time
 
-        #pragma omp target teams distribute parallel for \
-        map (to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n]) \
-        num_teams(_TEAMS) thread_limit(_THREADS) collapse(2)
-        for(int i=0;i<m;i++){
-            for (int j=0;j<n;j++){
-                double sum = 0;
-                for(int l=0;l<k;l++)
-                    sum += A[i][l]*B[l][j];
-                C[i][j] = sum;
+        double t1, t2, t3;
+        t1 = omp_get_wtime();
+        // data won't be transfered twice 
+        #pragma omp target data map(to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n])
+        {
+            t2 = omp_get_wtime();
+            // TRANSER_TIMING starts
+            #pragma omp target teams distribute parallel for \
+            map (to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n]) \
+            num_teams(_TEAMS) thread_limit(_THREADS) \
+            collapse(2)
+            // num_teams(_TEAMS) thread_limit(_THREADS) collapse(2)
+            for(int i=0; i<m; i++){
+                for (int j=0; j<n; j++){
+                    double sum = 0;
+                    for(int l=0; l<k; l++)
+                        sum += A[i][l]*B[l][j];
+                    C[i][j] = sum;
+                }
             }
-        }
+        } //end parallel region
+        t3 = omp_get_wtime();
+        printf("TransTime: %f\tTime: %f\t", 1e3*(t2-t1), 1e3*(t3-t1));
     }
 
     void 
@@ -104,7 +114,7 @@ extern "C" {
         
         #pragma omp target teams loop \
         map (to: A[0:m][0:k], B[0:k][0:n], m,k,n) map(tofrom: C[0:m][0:n]) \
-        num_teams(_TEAMS) thread_limit(_THREADS) collapse(2)
+        collapse(2)
         for (int i1 = 0; i1 < m; i1 += _BLK_SIZE) {
             for (int j = 0; j < n; j++) {
                 int i2, l;
@@ -131,6 +141,9 @@ extern "C" {
 
     void 
     matmult_asy_offload(int m, int n, int k, double **A, double **B, double **C) {
+        double t1, t2;
+        t1 = omp_get_wtime();
+
         #pragma omp target enter data map(alloc: A[0:m][0:k], B[0:k][0:n], C[0:m][0:n])
         #pragma omp target update to(B[0:k][0:n]) 
         
@@ -139,13 +152,10 @@ extern "C" {
             int slab_len = m / _SLABS; 
             int begin = s * slab_len;
 
-            #pragma omp target update to(A[begin:slab_len][0:k]) depend(out:A) nowait
-            #pragma omp target teams distribute parallel for \
-            map(to: A[begin:slab_len][:k]) \
-            num_teams(_TEAMS) thread_limit(_THREADS)\
-            depend(in:A) depend(out:C) nowait \
-            collapse(2)
-            // apply to mnk
+            #pragma omp target update to(A[begin:slab_len][0:k], C[begin:slab_len][0:n])  nowait
+            #pragma omp target teams distribute parallel for collapse(2) nowait \
+            depend(in: A[begin:slab_len][0:k], B[0:k][0:n]) \
+            depend(out:C[begin:slab_len][0:n])
             for(int i = begin; i < begin + slab_len; i++) {
                 for (int j = 0; j < n; j++) {
                     double sum = 0;
@@ -154,10 +164,13 @@ extern "C" {
                     C[i][j] = sum;
                 }
             }
-            #pragma omp target update from(C[begin:slab_len][:n]) depend(in:C) nowait
+        #pragma omp target update from(C[begin:slab_len][0:n]) nowait
         } 
         #pragma omp taskwait // wait on the completion of child tasks
         #pragma omp target exit data map(delete: A[0:m][0:k], B[0:k][0:n], C[0:m][0:n])
+
+        t2 = omp_get_wtime();
+        printf("Time: %f\t", 1e3*(t2-t1));
     }
 
     void 
