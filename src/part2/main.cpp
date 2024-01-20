@@ -32,6 +32,26 @@
 #define N_DEFAULT 40
 #define ITER_DEFAULT 1000
 
+
+// This just exists peacefully! Do not disturb it!
+void warmup() 
+{
+  std::cout << "Log: Warmup..." << std::endl;
+  int sum;
+  #pragma omp target teams distribute parallel for
+  for (int device_id = 0; device_id < num_devices; ++device_id) {
+        #pragma omp target device(device_id) map(tofrom: device_id) 
+        {
+            int sum = 0;
+            #pragma omp teams distribute parallel for reduction(+:sum)
+            for (int i = 0; i < 100; ++i) {
+              sum += i;
+            }
+        }
+    }
+    std::cout << "Log: Finished warmup..." << std::endl;
+}
+
 double ***solve_base(int N, int iter_max, double tolerance, int start_T)
 {
   double ***u_curr = NULL;
@@ -152,7 +172,7 @@ double ***solve_omp(int N, int iter_max, double tolerance, int start_T)
   std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
-  std::cerr << iter / exec_time << std::endl;
+  std::cerr << _NUM_TEAMS << "\t" _THREAD_LIMIT << "\t" << iter / exec_time << std::endl;
   return u_curr;
 }
 
@@ -549,11 +569,13 @@ void main(int argc, char *argv[])
 
 #ifdef _JACOBI
   output_prefix = "jacobi";
+  // warmup();
   solve_base(N, iter_max, tolerance, start_T);
 #endif
 
 #ifdef _JACOBI_ALLOC
   output_prefix = "jacobi_alloc";
+  // warmup();
   u_curr = solve_alloc(N, iter_max, start_T);
 #endif
 
@@ -569,11 +591,13 @@ void main(int argc, char *argv[])
 
 #ifdef _JACOBI_DIST
   output_prefix = "jacobi_dist";
+  // warmup();
   u_curr = solve_dist(N, iter_max, tolerance, start_T);
 #endif
 
 #ifdef _JACOBI_DUP
   output_prefix = "jacobi_dup";
+  // warmup();
   u_curr = solve_dup(N, iter_max, start_T);
 #endif
 

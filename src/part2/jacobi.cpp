@@ -25,7 +25,7 @@ int jacobi(double ***u_curr, double ***u_prev, double ***f, int N,
     // Collapse (3) --> 3 nested loops
     // Try rounding up to 128 for oversubscription to hide latency
     // 1024 -> thread limit per team (try 512 as well)
-    #pragma omp target teams distribute parallel for num_teams(128) thread_limit(1024) collapse(3)
+    #pragma omp target teams distribute parallel for num_teams(_NUM_TEAMS) thread_limit(_THREAD_LIMIT) collapse(3)
     for (int i = 1; i < N - 1; i++)
       for (int j = 1; j < N - 1; j++)
         for (int k = 1; k < N - 1; k++) {

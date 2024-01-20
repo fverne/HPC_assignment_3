@@ -17,11 +17,7 @@
 #BSUB -R "span[hosts=1]"
 #BSUB -gpu "num=1:mode=exclusive_process"
 
-# EXECUTABLE="poisson_jexpand"
-# just pass executable poisson_jomp
-# or pass poisson_expand (same script to compare both)
-# echo -e "Executable name: ${EXECUTABLE}"
-EXECUTABLE="poisson_jomp"
+EXECUTABLE="poisson_ja"
 
 # Tolerance is not actually used at these scripts, just there for the
 # sake of the argument
