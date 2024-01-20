@@ -9,6 +9,7 @@
 #
 #BSUB -J omp_teams_thread_limit
 #BSUB -o output/omp_teams_thread_limit_%J.out
+#BSUB -e output/omp_teams_thread_limit_%J.err
 #BSUB -q hpcintrogpu
 #BSUB -n 32
 #BSUB -R "rusage[mem=2048]"
@@ -43,8 +44,8 @@ MAKE_THREADS=12
 cd ..
 for TEAM in $NUM_TEAMS; do
     for THREAD in $THREAD_LIMIT; do
+        make clean
         make -j $MAKE_THREADS THREAD_LIMIT=$THREAD NUM_TEAMS=$TEAM
         ./$EXECUTABLE $N_DEFAULT $ITER_MAX $TOLERANCE $START_VALUE $EXTRA_ARGS 
     done    
 done
-
