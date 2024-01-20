@@ -27,9 +27,9 @@ int jacobi_dup(double ***u_curr, double ***u_prev, double ***f, int N, int max_i
                delta_2 * f[i][j][k]);
         }
     #pragma omp target teams distribute parallel for collapse(3) is_device_ptr(u_prev, u_curr, f) num_teams(_NUM_TEAMS) thread_limit(_THREAD_LIMIT) device(1)
-    for (int i = N / 2; i < N - 1; i++)
-      for (int j = N / 2; j < N - 1; j++)
-        for (int k = N / 2; k < N - 1; k++)
+    for (int i = (N - 1) / 2; i < N - 1; i++)
+      for (int j = (N - 1) / 2; j < N - 1; j++)
+        for (int k = (N - 1) / 2; k < N - 1; k++)
         {
           u_curr[i][j][k] =
               fraction *
@@ -45,7 +45,6 @@ int jacobi_dup(double ***u_curr, double ***u_prev, double ***f, int N, int max_i
     u_prev = u_curr;
     u_curr = tmp;
 
-    ++iter;
   }
 
   // Check the odd / even of iterations

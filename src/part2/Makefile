@@ -1,4 +1,4 @@
-NUM_TEAMS ?= 128
+NUM_TEAMS ?= 114
 THREAD_LIMIT ?= 1024
 
 # Targets

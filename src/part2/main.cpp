@@ -45,7 +45,7 @@ void warmup()
         sum += i;
       }
   }
-    std::cout << "Log: Finished warmup..." << std::endl;
+  std::cout << "Log: Finished warmup..." << std::endl;
 }
 
 double ***solve_base(int N, int iter_max, double tolerance, int start_T)
