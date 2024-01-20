@@ -106,7 +106,7 @@ double ***solve_base(int N, int iter_max, double tolerance, int start_T)
   std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
-  std::cerr << iter / exec_time << std::endl;
+  std::cerr << _NUM_TEAMS << "\t" << _THREAD_LIMIT << "\t" << iter / exec_time <<  std::endl;
   return u_curr;
 }
 
@@ -168,7 +168,7 @@ double ***solve_omp(int N, int iter_max, double tolerance, int start_T)
   std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
-  std::cerr << _NUM_TEAMS << "\t" << _THREAD_LIMIT << "\t" << iter / exec_time << std::endl;
+  std::cerr << N << "\t" << omp_get_max_threads() << "\t" << iter / exec_time << std::endl;
   return u_curr;
 }
 
@@ -231,7 +231,7 @@ double ***solve_expand(int N, int iter_max, double tolerance, int start_T)
   std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
-  std::cerr << iter / exec_time << std::endl;
+  std::cerr << N << "\t" << omp_get_max_threads() << "\t" << iter / exec_time << std::endl;
   return u_curr;
 }
 
@@ -293,7 +293,7 @@ double ***solve_dist(int N, int iter_max, double tolerance, int start_T)
   std::cout << "Log: Number of iterations: " << iter << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
   std::cout << "Log: N: " << N << std::endl;
-  std::cerr << iter / exec_time << std::endl;
+  std::cerr << _NUM_TEAMS << "\t" << _THREAD_LIMIT << "\t" << iter / exec_time << "\t" << iter <<< std::endl;
 
   return u_curr;
 }
@@ -413,7 +413,7 @@ double ***solve_alloc(int N, int iter_max, double start_T)
   std::cout << "Log: Jacobi allocation" << std::endl;
   std::cout << "Log: Execution time: " << exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
-  std::cerr << iter / exec_time << std::endl;
+  std::cerr << _NUM_TEAMS << "\t" << _THREAD_LIMIT << "\t" << iter / exec_time <<  std::endl;
 
   return u_curr_values;
 }
@@ -574,7 +574,7 @@ double ***solve_dup(int N, int iter_max, double start_T)
   std::cout << "Log: Execution time: " << exec_time << std::endl;
   std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
-  std::cerr << iter / exec_time << std::endl;
+  std::cerr << _NUM_TEAMS << "\t" << _THREAD_LIMIT << "\t" << iter / exec_time <<  std::endl;
 
   return u_curr_values;
 }

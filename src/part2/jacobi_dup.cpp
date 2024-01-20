@@ -40,6 +40,7 @@ int jacobi_dup(double ***u_curr_0, double ***u_prev_0, double ***f_0, double ***
                u_prev_1[i][j + 1][k] + u_prev_1[i][j][k - 1] + u_prev_1[i][j][k + 1] +
                delta_2 * f_1[i][j][k]);
         }
+        
     // Swap pointers on the host
     // Wait for both gpu tasks to finish
     #pragma omp taskwait

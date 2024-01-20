@@ -1,0 +1,532 @@
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.862663
+Log: Iterations / sec: 11592
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.882597
+Log: Iterations / sec: 11330.2
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.881789
+Log: Iterations / sec: 11340.6
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.876126
+Log: Iterations / sec: 11413.9
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.877123
+Log: Iterations / sec: 11400.9
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.868342
+Log: Iterations / sec: 11516.2
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.875739
+Log: Iterations / sec: 11418.9
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.865927
+Log: Iterations / sec: 11548.3
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.864047
+Log: Iterations / sec: 11573.4
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.871729
+Log: Iterations / sec: 11471.5
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.872005
+Log: Iterations / sec: 11467.8
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.864663
+Log: Iterations / sec: 11565.2
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.880235
+Log: Iterations / sec: 11360.6
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.868657
+Log: Iterations / sec: 11512
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.867097
+Log: Iterations / sec: 11532.7
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.865374
+Log: Iterations / sec: 11555.7
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.875017
+Log: Iterations / sec: 11428.4
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.868516
+Log: Iterations / sec: 11513.9
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.867793
+Log: Iterations / sec: 11523.5
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.881575
+Log: Iterations / sec: 11343.3
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.864887
+Log: Iterations / sec: 11562.2
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.863767
+Log: Iterations / sec: 11577.2
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.863383
+Log: Iterations / sec: 11582.3
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.86809
+Log: Iterations / sec: 11519.5
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.864517
+Log: Iterations / sec: 11567.2
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.864611
+Log: Iterations / sec: 11565.9
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.877258
+Log: Iterations / sec: 11399.2
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.874731
+Log: Iterations / sec: 11432.1
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.863547
+Log: Iterations / sec: 11580.1
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.872815
+Log: Iterations / sec: 11457.2
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 10000
+Log: Execution time: 0.867097
+Log: Iterations / sec: 11532.7
+Log: N: 100
+Log: Number of threads: 1
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19940959: <omp_teams_thread_limit> in cluster <dcc> Exited
+
+Job <omp_teams_thread_limit> was submitted from host <n-62-11-46> by user <s233091> in cluster <dcc> at Sat Jan 20 23:24:04 2024
+Job was executed on host(s) <32*n-62-12-81>, in queue <hpcintrogpu>, as user <s233091> in cluster <dcc> at Sat Jan 20 23:24:06 2024
+</zhome/c7/f/203083> was used as the home directory.
+</zhome/c7/f/203083/02614/HPC_assignment_3/src/part2/bsub> was used as the working directory.
+Started at Sat Jan 20 23:24:06 2024
+Terminated at Sat Jan 20 23:27:18 2024
+Results reported at Sat Jan 20 23:27:18 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+# 02614 - High-Performance Computing, January 2024
+# 
+# batch script to run matmult on a dedicated GPU server in the hpcintrogpu
+# queue
+#
+# Author: Bernd Dammann <bd@cc.dtu.dk>
+#         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
+#
+#BSUB -J omp_teams_thread_limit
+#BSUB -o output/omp_teams_thread_limit_%J.out
+#BSUB -e output/omp_teams_thread_limit_%J.err
+#BSUB -q hpcintrogpu
+#BSUB -n 32
+#BSUB -R "rusage[mem=2048]"
+#BSUB -W 1:00
+#BSUB -R "span[hosts=1]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+
+EXECUTABLE="poisson_j"
+
+# Tolerance is not actually used at these scripts, just there for the
+# sake of the argument
+# N_SIZES="50 100 200 400 800 1000"
+# THREADS="1 2 4 8 10 12 16 20 24 30 36 40"
+TOLERANCE="0.001"
+ITER_MAX=10000
+START_VALUE="0.0"
+EXTRA_ARGS=4
+
+N_DEFAULT=100
+# Experiment with these values for jacobi gpu
+# given this information
+# Multiprocessors = 114
+# Maximum number of threads per block = 1024 
+NUM_TEAMS="64 114 128 256 512"
+THREAD_LIMIT="64 128 256 512 1024 1500 2048"
+
+# load module for shared cuda libraries
+module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
+
+MAKE_THREADS=12
+
+cd ..
+for TEAM in $NUM_TEAMS; do
+    for THREAD in $THREAD_LIMIT; do
+        make clean
+        make -j $MAKE_THREADS THREAD_LIMIT=$THREAD NUM_TEAMS=$TEAM > /dev/null 2>&1
+        ./$EXECUTABLE $N_DEFAULT $ITER_MAX $TOLERANCE $START_VALUE $EXTRA_ARGS 
+    done    
+
+(... more ...)
+------------------------------------------------------------
+
+Exited with exit code 127.
+
+Resource usage summary:
+
+    CPU time :                                   928.00 sec.
+    Max Memory :                                 31 MB
+    Average Memory :                             19.33 MB
+    Total Requested Memory :                     65536.00 MB
+    Delta Memory :                               65505.00 MB
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                10
+    Run time :                                   241 sec.
+    Turnaround time :                            194 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <output/omp_teams_thread_limit_19940959.err> for stderr output of this job.
+
