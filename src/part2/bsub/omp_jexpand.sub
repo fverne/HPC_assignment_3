@@ -1,0 +1,39 @@
+#!/bin/bash
+# 02614 - High-Performance Computing, January 2024
+# 
+# batch script to run matmult on a dedicated GPU server in the hpcintrogpu
+# queue
+#
+# Author: Bernd Dammann <bd@cc.dtu.dk>
+#         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
+#
+#BSUB -J omp_expand
+#BSUB -o output/omp_expand_%J.out
+#BSUB -q hpcintrogpu
+#BSUB -n 32
+#BSUB -R "rusage[mem=2048]"
+#BSUB -W 15
+#BSUB -R "span[hosts=1]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+
+EXECUTABLE="poisson_jexpand"
+
+# Tolerance is not actually used at these scripts, just there for the
+# sake of the argument
+N_SIZES="50 100 200 400 800 1000"
+THREADS="1 2 4 8 10 12 16 20 24 30 36 40"
+ITER_MAX=10000
+TOLERANCE="0.001"
+START_VALUE="0.0"
+EXTRA_ARGS=4
+
+# load module for shared cuda libraries
+module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
+
+for N in $N_SIZES; do
+    for THREAD in $THREADS; do
+        export OMP_NUM_THREADS=${THREAD:-1}
+    echo "OMP_NUM_THREADS=$OMP_NUM_THREADS"
+    ../$EXECUTABLE $N $ITER_MAX $TOLERANCE $START_VALUE $EXTRA_ARGS
+    done
+done

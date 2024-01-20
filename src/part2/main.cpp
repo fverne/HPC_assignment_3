@@ -205,7 +205,6 @@ double ***solve_expand(int N, int iter_max, double tolerance, int start_T)
 
   std::cout << "Log: Jacobi Expand" << std::endl;
   std::cout << "Log: Execution time: " << exec_time << std::endl;
-  std::cout << "Log: Number of iterations: " << iter << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
   std::cout << "Log: N: " << N << std::endl;
   return u_curr;
