@@ -420,17 +420,25 @@ double ***solve_alloc(int N, int iter_max, double start_T)
 
 double ***solve_dup(int N, int iter_max, double start_T)
 {
-  double ***u_curr = NULL;
-  double ***u_prev = NULL;
-  double ***f = NULL;
+  double ***u_curr_0 = NULL;
+  double ***u_prev_0 = NULL;
+  double ***f_0 = NULL;
+
+  double ***u_curr_1 = NULL;
+  double ***u_prev_1 = NULL;
+  double ***f_1 = NULL;
 
   double itime, ftime, exec_time;
   int dev_num, dev_available, dev_init;
   int iter = 0;
 
-  double *a_u_curr = NULL;
-  double *a_u_prev = NULL;
-  double *a_f = NULL;
+  double *a_u_curr_0 = NULL;
+  double *a_u_prev_0 = NULL;
+  double *a_f_0 = NULL;
+
+  double *a_u_curr_1 = NULL;
+  double *a_u_prev_1 = NULL;
+  double *a_f_1 = NULL;
 
   // Host
   double ***u_curr_values = NULL;
@@ -454,22 +462,41 @@ double ***solve_dup(int N, int iter_max, double start_T)
 
   // Allocating on device 0
   std::cout << "Log: Allocating on device 0..." << std::endl;
-  if ((u_curr = malloc_3d_device(N, N, N, &a_u_curr, 0)) == NULL)
+  if ((u_curr_0 = malloc_3d_device(N, N, N, &a_u_curr_0, 0)) == NULL)
   {
     std::cerr << "Error: Array u_curr: allocation failed" << std::endl;
     exit(EXIT_FAILURE);
   }
-  if ((u_prev = malloc_3d_device(N, N, N, &a_u_prev, 0)) == NULL)
+  if ((u_prev_0 = malloc_3d_device(N, N, N, &a_u_prev_0, 0)) == NULL)
   {
     std::cerr << "Error: Array u_prev: allocation failed" << std::endl;
     exit(EXIT_FAILURE);
   }
-  if ((f = malloc_3d_device(N, N, N, &a_f, 0)) == NULL)
+  if ((f_0 = malloc_3d_device(N, N, N, &a_f_0, 0)) == NULL)
   {
     std::cerr << "Error: Array f: allocation failed" << std::endl;
     exit(EXIT_FAILURE);
   }
   std::cout << "Log: Allocating on device 0 finished..." << std::endl;
+
+  // Allocating on device 1
+  std::cout << "Log: Allocating on device 1..." << std::endl;
+  if ((u_curr_1 = malloc_3d_device(N, N, N, &a_u_curr_1, 1)) == NULL)
+  {
+    std::cerr << "Error: Array u_curr: allocation failed" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  if ((u_prev_1 = malloc_3d_device(N, N, N, &a_u_prev_1, 1)) == NULL)
+  {
+    std::cerr << "Error: Array u_prev: allocation failed" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  if ((f_1 = malloc_3d_device(N, N, N, &a_f_1, 1)) == NULL)
+  {
+    std::cerr << "Error: Array f: allocation failed" << std::endl;
+    exit(EXIT_FAILURE);
+  }
+  std::cout << "Log: Allocating on device 1 finished..." << std::endl;
 
   // Allocate memory on host
   std::cout << "Log: Allocating on host..." << std::endl;
@@ -500,28 +527,40 @@ double ***solve_dup(int N, int iter_max, double start_T)
   // **Ignore** Function signature:
   // omp_target_memcpy(void *dst, void *src, size_t length, size_t dst_offset, size_t src_offset, int dst_dev_num, int src_dev_num);
   std::cout << "Log: Memcpying on device 0 ..." << std::endl;
-  omp_target_memcpy(a_u_curr, u_curr_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
-  omp_target_memcpy(a_u_prev, u_prev_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
-  omp_target_memcpy(a_f, f_values, (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
-  std::cout << "Log: Finished memcpying on device 0 ..." << std::endl;
+  omp_target_memcpy(a_u_curr_0, u_curr_values[0][0], (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
+  omp_target_memcpy(a_u_prev_0, u_prev_values[0][0], (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
+  omp_target_memcpy(a_f_0, f_values[0][0], (N * N * N) * sizeof(double), 0, 0, 0, dev_init);
+
+  // You also need to allocate the data on the other device as well 
+  // This does not make any sense
+  std::cout << "Log: Memcpying on device 1 .." << std::endl;
+  // Check with device 1 or 0
+  omp_target_memcpy(a_u_curr_1, u_curr_values[0][0], (N * N * N) * sizeof(double), 0, 0, 1, dev_init);
+  omp_target_memcpy(a_u_prev_1, u_prev_values[0][0], (N * N * N) * sizeof(double), 0, 0, 1, dev_init);
+  omp_target_memcpy(a_f_1, f_values[0][0], (N * N * N) * sizeof(double), 0, 0, 1, dev_init);
+  std::cout << "Log: Finished memcpying on device 1 .." << std::endl;
 
   itime = omp_get_wtime();
 
 #ifdef _JACOBI_DUP
-  iter = jacobi_dup(u_curr, u_prev, f, N, iter_max);
+  iter = jacobi_dup(u_curr_0, u_prev_0, f_0, u_curr_1, u_prev_1, f_1, N, iter_max);
 #endif
 
   ftime = omp_get_wtime();
   exec_time = ftime - itime;
 
   std::cout << "Log: Copying data back to host" << std::endl;
-  omp_target_memcpy(u_curr_values, a_u_curr, (N * N * N) * sizeof(double), 0, 0, dev_init, 0);
+  omp_target_memcpy(u_curr_values[0][0], a_u_curr_0, (N / 2) * N * N * sizeof(double), 0, 0, 0, omp_get_default_device());
+  omp_target_memcpy(u_curr_values[0][0], a_u_curr_1, (N / 2) * N * N * sizeof(double), (N / 2) * N * N * sizeof(double), 0, 1, omp_get_default_device());
   std::cout << "Log: Finished copying data back to host from device 0 ..." << std::endl;
 
   std::cout << "Log: Freeing device memory ..." << std::endl;
-  free_3d_device(2, u_curr, a_u_curr, 0);
-  free_3d_device(2, u_prev, a_u_prev, 0);
-  free_3d_device(2, f, a_f, 0);
+  free_3d_device(2, u_curr_0, a_u_curr_0, 0);
+  free_3d_device(2, u_curr_1, a_u_curr_1, 0);
+  free_3d_device(2, u_prev_0, a_u_prev_0, 0);
+  free_3d_device(2, u_prev_1, a_u_prev_1, 0);
+  free_3d_device(2, f_0, a_f_0, 0);
+  free_3d_device(2, f_1, a_f_1, 0);
   std::cout << "Log: Freeing device memory finished..." << std::endl;
 
   std::cout << "Log: Disabling peer-to-peer access..." << std::endl;
