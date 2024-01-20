@@ -36,19 +36,15 @@
 // This just exists peacefully! Do not disturb it!
 void warmup() 
 {
+  int num_devices = omp_get_num_devices();
   std::cout << "Log: Warmup..." << std::endl;
-  int sum;
-  #pragma omp target teams distribute parallel for
+  int sum = 0;
+  #pragma omp target teams distribute parallel for reduction(+:sum) collapse(2)
   for (int device_id = 0; device_id < num_devices; ++device_id) {
-        #pragma omp target device(device_id) map(tofrom: device_id) 
-        {
-            int sum = 0;
-            #pragma omp teams distribute parallel for reduction(+:sum)
-            for (int i = 0; i < 100; ++i) {
-              sum += i;
-            }
-        }
-    }
+      for (int i = 0; i < 100; ++i) {
+        sum += i;
+      }
+  }
     std::cout << "Log: Finished warmup..." << std::endl;
 }
 
@@ -172,7 +168,7 @@ double ***solve_omp(int N, int iter_max, double tolerance, int start_T)
   std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
-  std::cerr << _NUM_TEAMS << "\t" _THREAD_LIMIT << "\t" << iter / exec_time << std::endl;
+  std::cerr << _NUM_TEAMS << "\t" << _THREAD_LIMIT << "\t" << iter / exec_time << std::endl;
   return u_curr;
 }
 
