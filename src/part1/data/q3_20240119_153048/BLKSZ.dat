@@ -1,0 +1,8 @@
+4    24576.000 895672.365 # matmult_blk_offload
+8    24576.000 936349.028 # matmult_blk_offload
+12    24576.000 712190.446 # matmult_blk_offload
+16    24576.000 834244.421 # matmult_blk_offload
+20    24576.000 731975.079 # matmult_blk_offload
+24    24576.000 506684.608 # matmult_blk_offload
+28    24576.000 468813.886 # matmult_blk_offload
+32    24576.000 781066.592 # matmult_blk_offload

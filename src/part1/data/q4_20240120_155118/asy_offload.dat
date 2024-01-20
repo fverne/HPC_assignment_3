@@ -1,0 +1,8 @@
+100 Time: 25.475979	     234.375     78.387 # matmult_asy_offload
+200 Time: 23.306847	     937.500    685.267 # matmult_asy_offload
+500 Time: 36.955833	    5859.375   6756.832 # matmult_asy_offload
+1000 Time: 53.302050	   23437.500  37492.798 # matmult_asy_offload
+2000 Time: 59.966803	   93750.000 266588.520 # matmult_asy_offload
+3000 Time: 80.337048	  210937.500 671703.795 # matmult_asy_offload
+4000 Time: 149.775028	  375000.000 854206.969 # matmult_asy_offload
+5000 Time: 305.895090	  585937.500 817055.976 # matmult_asy_offload

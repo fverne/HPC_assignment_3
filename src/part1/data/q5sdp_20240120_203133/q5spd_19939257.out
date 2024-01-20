@@ -1,0 +1,96 @@
+nvc++ -g -fast -Msafeptr -Minfo -mp=gpu -gpu=pinned -gpu=lineinfo -gpu=cc90 -cuda -mp=noautopar -cudalib=cublas  -fpic -shared     -D_TEAMS=114 -D_THREADS=16 -D_BLK_SIZE=4 -D_SLABS=4 -o matmult_c.o -c matmult_c.cpp
+nvc++ -g -fast -Msafeptr -Minfo -mp=gpu -gpu=pinned -gpu=lineinfo -gpu=cc90 -cuda -mp=noautopar -cudalib=cublas  -fpic -shared     -D_TEAMS=114 -D_THREADS=16 -D_BLK_SIZE=4 -D_SLABS=4 -o libmatmult.so matmult_c.o 
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19939257: <q5spd> in cluster <dcc> Done
+
+Job <q5spd> was submitted from host <n-62-11-46> by user <s232242> in cluster <dcc> at Sat Jan 20 20:31:29 2024
+Job was executed on host(s) <32*n-62-12-81>, in queue <hpcintrogpu>, as user <s232242> in cluster <dcc> at Sat Jan 20 20:31:31 2024
+</zhome/45/b/202242> was used as the home directory.
+</zhome/45/b/202242/hpc/w3/HPC_assignment_3/src/part1> was used as the working directory.
+Started at Sat Jan 20 20:31:31 2024
+Terminated at Sat Jan 20 20:40:44 2024
+Results reported at Sat Jan 20 20:40:44 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+# experiments name
+EXPNAME=q5sdp_$(date +%Y%m%d_%H%M%S)
+OUTDIR=./output/$EXPNAME/
+mkdir -p $OUTDIR
+
+# 02614 - High-Performance Computing, January 2024
+# 
+# batch script to run matmult on a dedicated GPU server in the hpcintrogpu
+# queue
+#
+# Author: Bernd Dammann <bd@cc.dtu.dk>
+#         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
+#
+#BSUB -J q5spd
+#BSUB -o output/q5spd_%J.out
+#BSUB -e output/q5spd_%J.err
+#BSUB -q hpcintrogpu
+#BSUB -n 32
+#BSUB -R "rusage[mem=2048]"
+#BSUB -W 15
+#BSUB -R "span[hosts=1]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+
+# define the driver name to use
+# valid values: matmult_c.nvc++, matmult_f.nvc++
+#
+EXECUTABLE=matmult_c.nvc++
+
+# define the mkn values in the MKN variable
+#
+SIZES="100 200 500 1000 2000 5000"
+
+# define the method type in TYPE
+#
+TYPES="nat"
+
+# enable(1)/disable(0) result checking
+export MATMULT_COMPARE=0
+export MFLOPS_MAX_IT=1
+
+# load module for shared cuda libraries
+module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
+
+make clean && make 
+# Compare the performance and speed-up observed between lib and lib offload
+for TYPE in $TYPES; do
+    OUT=$OUTDIR/q5-$TYPE.dat
+    for S in $SIZES; do
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   555.00 sec.
+    Max Memory :                                 91 MB
+    Average Memory :                             79.43 MB
+    Total Requested Memory :                     65536.00 MB
+    Delta Memory :                               65445.00 MB
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                10
+    Run time :                                   639 sec.
+    Turnaround time :                            555 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <output/q5spd_19939257.err> for stderr output of this job.
+

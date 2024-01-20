@@ -1,0 +1,10 @@
+100 TransTime: 0.823021	Time: 7.467031	     234.375    265.832 # matmult_mnk_offload
+200 TransTime: 0.908852	Time: 7.707834	     937.500   2058.516 # matmult_mnk_offload
+300 TransTime: 5.554914	Time: 11.756897	    2109.375   4565.987 # matmult_mnk_offload
+400 TransTime: 10.951042	Time: 14.395952	    3750.000   8840.647 # matmult_mnk_offload
+500 TransTime: 10.219097	Time: 15.083075	    5859.375  16465.338 # matmult_mnk_offload
+600 TransTime: 11.301041	Time: 18.498898	    8437.500  23216.445 # matmult_mnk_offload
+700 TransTime: 11.498928	Time: 21.031857	   11484.375  32409.584 # matmult_mnk_offload
+800 TransTime: 11.426926	Time: 24.595976	   15000.000  41354.391 # matmult_mnk_offload
+900 TransTime: 6.202936	Time: 23.999929	   18984.375  60224.097 # matmult_mnk_offload
+1000 TransTime: 14.681101	Time: 38.447142	   23437.500  51664.129 # matmult_mnk_offload

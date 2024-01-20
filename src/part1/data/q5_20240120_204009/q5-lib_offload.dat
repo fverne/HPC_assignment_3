@@ -1,0 +1,6 @@
+100  Time: 12.001038	     234.375    165.514 # matmult_lib_offload
+200  Time: 23.655891	     937.500    674.093 # matmult_lib_offload
+500  Time: 28.243065	    5859.375   8826.254 # matmult_lib_offload
+1000  Time: 40.066957	   23437.500  49824.892 # matmult_lib_offload
+2000  Time: 31.044960	   93750.000 513949.380 # matmult_lib_offload
+5000  Time: 74.904919	  585937.500 3333218.305 # matmult_lib_offload

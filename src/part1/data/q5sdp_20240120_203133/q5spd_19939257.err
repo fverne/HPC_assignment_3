@@ -1,0 +1,96 @@
+ERROR: Unable to locate a modulefile for 'python3/3.6.2'
+ERROR: Unable to locate a modulefile for 'cuda/8.0'
+Loading cudnn/v7.0-prod-cuda8
+  Module ERROR: couldn't read file "/apps/dcc/etc/ModulesSL64/modulebase/cudnn":
+    no such file or directory
+        while executing
+    "source /apps/dcc/etc/ModulesSL64/modulebase/cudnn"
+        (file "/apps/dcc/etc/ModulesAlma92/modulefiles/cudnn/v7.0-prod-cuda8"
+    line 9)
+    Please contact <root@localhost>
+ERROR: Unable to locate a modulefile for 'ffmpeg/4.2.2'
+matmult_mkn_omp:
+     31, Recognized memory zero idiom
+     35, #omp parallel
+     37, Generated vector simd code for the loop
+matmult_nat:
+     53, Recognized memory zero idiom
+     56, Loop not fused: function call before adjacent loop
+     58, Generated vector simd code for the loop containing reductions
+matmult_mkn_offload:
+     86, Recognized memory zero idiom
+     87, #omp target teams distribute parallel for num_teams(114) thread_limit(16)
+         87, Generating "nvkernel_matmult_mkn_offload_F1L87_3" GPU kernel
+         92, Loop parallelized across teams and threads(128), schedule(static)
+     87, Generating map(to:A[:m][:k],k) 
+         Generating map(tofrom:C[:m][:n]) 
+         Generating map(to:m,n,B[:k][:n]) 
+     92, Loop not vectorized/parallelized: not countable
+     94, Generated vector simd code for the loop
+matmult_mnk_offload:
+    105, Recognized memory zero idiom
+    113, #omp target teams distribute parallel for num_teams(114) thread_limit(16)
+        112, Generating map(to:A[:m][:k],k) 
+             Generating map(tofrom:C[:m][:n]) 
+             Generating map(to:n,m,B[:k][:n]) 
+        113, Generating "nvkernel_matmult_mnk_offload_F1L113_7" GPU kernel
+        120, Loop parallelized across teams and threads(128), schedule(static)
+    113, Generating map(to:A[:m][:k],k) 
+         Generating map(tofrom:C[:m][:n]) 
+         Generating map(to:m,n,B[:k][:n]) 
+    121, Loop not vectorized/parallelized: not countable
+    123, Generated vector simd code for the loop containing reductions
+    124, FMA (fused multiply-add) instruction(s) generated
+matmult_blk_offload:
+    136, Recognized memory zero idiom
+    137, #omp target teams loop
+        137, Generating "nvkernel_matmult_blk_offload_F1L137_11" GPU kernel
+             Generating NVIDIA GPU code
+          142, Loop parallelized across teams, threads(128) collapse(2) /* blockIdx.x threadIdx.x */
+          143,   /* blockIdx.x threadIdx.x collapsed */
+          147, Loop run sequentially 
+          148, Loop run sequentially 
+          152, Loop run sequentially 
+          156, Loop run sequentially 
+          157, Loop run sequentially 
+        137, Generating Multicore code
+          142, Loop parallelized across threads
+    137, Generating map(to:A[:m][:k],k) 
+         Generating map(tofrom:C[:m][:n]) 
+         Generating map(to:m,n,B[:k][:n]) 
+         Local memory used for sum
+    142, Loop not vectorized/parallelized: too deeply nested
+    147, Loop carried scalar dependence for l at line 149,151
+         Loop carried dependence of sum prevents parallelization
+         Loop carried backward dependence of sum prevents vectorization
+    148, Complex loop carried dependence of sum prevents parallelization
+         Loop carried dependence of sum prevents parallelization
+         Loop carried backward dependence of sum prevents vectorization
+         Loop carried scalar dependence for i2 at line 149,150
+         Loop unrolled 4 times (completely unrolled)
+    152, Loop carried dependence of C->-> prevents parallelization
+         Loop carried backward dependence of C->-> prevents vectorization
+         Loop carried scalar dependence for i at line 153,154
+         Loop unrolled 4 times (completely unrolled)
+    156, Loop carried scalar dependence for l at line 158,160
+         Loop carried dependence of C->-> prevents parallelization
+         Loop carried backward dependence of C->-> prevents vectorization
+    157, Complex loop carried dependence of C->-> prevents parallelization
+         Loop carried dependence of C->-> prevents parallelization
+         Loop carried backward dependence of C->-> prevents vectorization
+         Loop carried scalar dependence for i2 at line 158,159
+         Loop unrolled 2 times
+matmult_asy_offload:
+    172, #omp parallel
+         Loop not vectorized/parallelized: contains structure move
+    174, #omp target teams distribute parallel for
+        174, Generating "nvkernel_matmult_asy_offload_F1L172_12_F1L174_14" GPU kernel
+        179, Loop parallelized across teams and threads(128), schedule(static)
+             #omp parallel
+    174, Generating map(to:A[begin:slab_len][:k]) 
+         Generating map(from:C[begin:slab_len][:n]) 
+         Generating map(to:B[:k][:n]) 
+    180, Loop not vectorized/parallelized: not countable
+    182, Generated vector simd code for the loop containing reductions
+    183, FMA (fused multiply-add) instruction(s) generated
+    190, Taskwait
