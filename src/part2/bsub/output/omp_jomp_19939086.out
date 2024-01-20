@@ -1,0 +1,512 @@
+OMP_NUM_THREADS=1
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.817731
+Log: Iterations / sec: 12229
+Log: N: 50
+Log: Number of threads: 1
+OMP_NUM_THREADS=2
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.557297
+Log: Iterations / sec: 17943.8
+Log: N: 50
+Log: Number of threads: 2
+OMP_NUM_THREADS=4
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.480141
+Log: Iterations / sec: 20827.2
+Log: N: 50
+Log: Number of threads: 4
+OMP_NUM_THREADS=8
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.406906
+Log: Iterations / sec: 24575.7
+Log: N: 50
+Log: Number of threads: 8
+OMP_NUM_THREADS=10
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.388893
+Log: Iterations / sec: 25714
+Log: N: 50
+Log: Number of threads: 10
+OMP_NUM_THREADS=12
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.382364
+Log: Iterations / sec: 26153.1
+Log: N: 50
+Log: Number of threads: 12
+OMP_NUM_THREADS=16
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.364037
+Log: Iterations / sec: 27469.7
+Log: N: 50
+Log: Number of threads: 16
+OMP_NUM_THREADS=20
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.408048
+Log: Iterations / sec: 24506.9
+Log: N: 50
+Log: Number of threads: 20
+OMP_NUM_THREADS=24
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.413184
+Log: Iterations / sec: 24202.3
+Log: N: 50
+Log: Number of threads: 24
+OMP_NUM_THREADS=30
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.423353
+Log: Iterations / sec: 23621
+Log: N: 50
+Log: Number of threads: 30
+OMP_NUM_THREADS=36
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.740358
+Log: Iterations / sec: 13507
+Log: N: 50
+Log: Number of threads: 36
+OMP_NUM_THREADS=40
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 0.851261
+Log: Iterations / sec: 11747.3
+Log: N: 50
+Log: Number of threads: 40
+OMP_NUM_THREADS=1
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 8.63274
+Log: Iterations / sec: 1158.38
+Log: N: 100
+Log: Number of threads: 1
+OMP_NUM_THREADS=2
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 4.28656
+Log: Iterations / sec: 2332.87
+Log: N: 100
+Log: Number of threads: 2
+OMP_NUM_THREADS=4
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 2.86374
+Log: Iterations / sec: 3491.93
+Log: N: 100
+Log: Number of threads: 4
+OMP_NUM_THREADS=8
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 1.94067
+Log: Iterations / sec: 5152.85
+Log: N: 100
+Log: Number of threads: 8
+OMP_NUM_THREADS=10
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 1.78006
+Log: Iterations / sec: 5617.8
+Log: N: 100
+Log: Number of threads: 10
+OMP_NUM_THREADS=12
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 1.6445
+Log: Iterations / sec: 6080.87
+Log: N: 100
+Log: Number of threads: 12
+OMP_NUM_THREADS=16
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 1.50018
+Log: Iterations / sec: 6665.88
+Log: N: 100
+Log: Number of threads: 16
+OMP_NUM_THREADS=20
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 1.42017
+Log: Iterations / sec: 7041.44
+Log: N: 100
+Log: Number of threads: 20
+OMP_NUM_THREADS=24
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 1.39635
+Log: Iterations / sec: 7161.53
+Log: N: 100
+Log: Number of threads: 24
+OMP_NUM_THREADS=30
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 1.39191
+Log: Iterations / sec: 7184.36
+Log: N: 100
+Log: Number of threads: 30
+OMP_NUM_THREADS=36
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 2.56465
+Log: Iterations / sec: 3899.17
+Log: N: 100
+Log: Number of threads: 36
+OMP_NUM_THREADS=40
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 2.65506
+Log: Iterations / sec: 3766.39
+Log: N: 100
+Log: Number of threads: 40
+OMP_NUM_THREADS=1
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 95.0098
+Log: Iterations / sec: 105.252
+Log: N: 200
+Log: Number of threads: 1
+OMP_NUM_THREADS=2
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 50.251
+Log: Iterations / sec: 199.001
+Log: N: 200
+Log: Number of threads: 2
+OMP_NUM_THREADS=4
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 25.4325
+Log: Iterations / sec: 393.198
+Log: N: 200
+Log: Number of threads: 4
+OMP_NUM_THREADS=8
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 11.9705
+Log: Iterations / sec: 835.39
+Log: N: 200
+Log: Number of threads: 8
+OMP_NUM_THREADS=10
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 11.793
+Log: Iterations / sec: 847.963
+Log: N: 200
+Log: Number of threads: 10
+OMP_NUM_THREADS=12
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 10.0914
+Log: Iterations / sec: 990.943
+Log: N: 200
+Log: Number of threads: 12
+OMP_NUM_THREADS=16
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 7.99322
+Log: Iterations / sec: 1251.06
+Log: N: 200
+Log: Number of threads: 16
+OMP_NUM_THREADS=20
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 7.08651
+Log: Iterations / sec: 1411.13
+Log: N: 200
+Log: Number of threads: 20
+OMP_NUM_THREADS=24
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 6.63205
+Log: Iterations / sec: 1507.83
+Log: N: 200
+Log: Number of threads: 24
+OMP_NUM_THREADS=30
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 5.89583
+Log: Iterations / sec: 1696.11
+Log: N: 200
+Log: Number of threads: 30
+OMP_NUM_THREADS=36
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 10.5252
+Log: Iterations / sec: 950.101
+Log: N: 200
+Log: Number of threads: 36
+OMP_NUM_THREADS=40
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi OMP
+Log: Iterations: 10000
+Log: Execution time: 11.0832
+Log: Iterations / sec: 902.269
+Log: N: 200
+Log: Number of threads: 40
+OMP_NUM_THREADS=1
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...

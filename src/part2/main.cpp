@@ -78,16 +78,19 @@ double ***solve_base(int N, int iter_max, double tolerance, int start_T)
 
   itime = omp_get_wtime();
 #ifdef _JACOBI
-  jacobi(u_curr, u_prev, f, N, iter_max);
+  iter = jacobi(u_curr, u_prev, f, N, iter_max);
 #endif
 
   ftime = omp_get_wtime();
   exec_time = ftime - itime;
 
-  std::cout << "Log: Jacobi" << std::endl;
+  std::cout << "Log: Jacobi (base)" << std::endl;
+  std::cout << "Log: Iterations: " << iter << std::endl;
   std::cout << "Log: Execution time: " << exec_time << std::endl;
-  std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
+  std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
+  std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
+  std::cerr << iter / exec_time << std::endl;
   return u_curr;
 }
 
@@ -137,16 +140,19 @@ double ***solve_omp(int N, int iter_max, double tolerance, int start_T)
 
   itime = omp_get_wtime();
 #ifdef _JACOBI_OMP
-  jacobi_omp(u_curr, u_prev, f, N, iter_max);
+  iter = jacobi_omp(u_curr, u_prev, f, N, iter_max);
 #endif
 
   ftime = omp_get_wtime();
   exec_time = ftime - itime;
 
   std::cout << "Log: Jacobi OMP" << std::endl;
+  std::cout << "Log: Iterations: " << iter << std::endl;
   std::cout << "Log: Execution time: " << exec_time << std::endl;
-  std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
+  std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
+  std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
+  std::cerr << iter / exec_time << std::endl;
   return u_curr;
 }
 
@@ -204,9 +210,12 @@ double ***solve_expand(int N, int iter_max, double tolerance, int start_T)
   exec_time = ftime - itime;
 
   std::cout << "Log: Jacobi Expand" << std::endl;
+  std::cout << "Log: Iterations: " << iter << std::endl;
   std::cout << "Log: Execution time: " << exec_time << std::endl;
-  std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
+  std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
+  std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
+  std::cerr << iter / exec_time << std::endl;
   return u_curr;
 }
 
@@ -268,6 +277,7 @@ double ***solve_dist(int N, int iter_max, double tolerance, int start_T)
   std::cout << "Log: Number of iterations: " << iter << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
   std::cout << "Log: N: " << N << std::endl;
+  std::cerr << iter / exec_time << std::endl;
 
   return u_curr;
 }
@@ -387,6 +397,7 @@ double ***solve_alloc(int N, int iter_max, double start_T)
   std::cout << "Log: Jacobi allocation" << std::endl;
   std::cout << "Log: Execution time: " << exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
+  std::cerr << iter / exec_time << std::endl;
 
   return u_curr_values;
 }
@@ -504,8 +515,11 @@ double ***solve_dup(int N, int iter_max, double start_T)
   std::cout << "Log: Finished disabling peer-to-peer access..." << std::endl;
 
   std::cout << "Log: Jacobi dual GPU" << std::endl;
+  std::cout << "Log: Iterations: " << iter << std::endl;
   std::cout << "Log: Execution time: " << exec_time << std::endl;
+  std::cout << "Log: Iterations / sec: " << iter / exec_time << std::endl;
   std::cout << "Log: N: " << N << std::endl;
+  std::cerr << iter / exec_time << std::endl;
 
   return u_curr_values;
 }
