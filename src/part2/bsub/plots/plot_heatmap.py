@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Assuming the data you provided is in a CSV file and the delimiter is a tab
-csv_file_path = '../output/omp_teams_thread_limit_19952169.err'  # Update this path to your CSV file
+csv_file_path = '../output/omp_teams_thread_limit_19952410.err'  # Update this path to your CSV file
 
 # Read the CSV file
 data_from_csv = pd.read_csv(csv_file_path)

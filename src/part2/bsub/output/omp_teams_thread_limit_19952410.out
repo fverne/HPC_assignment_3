@@ -1,0 +1,1634 @@
+NUM_TEAMS: 114
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 64
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 28.3823
+Log: Iterations / sec: 3523.33
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 64
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 64
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 14.9229
+Log: Iterations / sec: 6701.12
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 64
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 64
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 14.9295
+Log: Iterations / sec: 6698.15
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 64
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 64
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 14.9223
+Log: Iterations / sec: 6701.36
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 64
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 64
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 14.9217
+Log: Iterations / sec: 6701.63
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 64
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 64
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 14.9287
+Log: Iterations / sec: 6698.49
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 64
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 64
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 14.9173
+Log: Iterations / sec: 6703.64
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 64
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 108
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 17.407
+Log: Iterations / sec: 5744.83
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 108
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 108
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 9.64855
+Log: Iterations / sec: 10364.2
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 108
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 108
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 9.66402
+Log: Iterations / sec: 10347.7
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 108
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 108
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 9.66947
+Log: Iterations / sec: 10341.8
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 108
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 108
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 9.65584
+Log: Iterations / sec: 10356.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 108
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 108
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 9.65636
+Log: Iterations / sec: 10355.9
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 108
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 108
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 9.65854
+Log: Iterations / sec: 10353.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 108
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 256
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 8.08635
+Log: Iterations / sec: 12366.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 256
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 256
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 4.89937
+Log: Iterations / sec: 20410.8
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 256
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 256
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 4.8756
+Log: Iterations / sec: 20510.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 256
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 256
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 4.89223
+Log: Iterations / sec: 20440.6
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 256
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 256
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 4.90344
+Log: Iterations / sec: 20393.8
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 256
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 256
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 4.89658
+Log: Iterations / sec: 20422.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 256
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 256
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 4.87136
+Log: Iterations / sec: 20528.2
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 256
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 512
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 4.81732
+Log: Iterations / sec: 20758.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 512
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 512
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.19653
+Log: Iterations / sec: 31284
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 512
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 512
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.20958
+Log: Iterations / sec: 31156.7
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 512
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 512
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.20574
+Log: Iterations / sec: 31194.1
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 512
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 512
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.17905
+Log: Iterations / sec: 31455.9
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 512
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 512
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.19202
+Log: Iterations / sec: 31328.1
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 512
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 512
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.18584
+Log: Iterations / sec: 31388.9
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 512
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 700
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.89101
+Log: Iterations / sec: 25700.2
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 700
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 700
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.81337
+Log: Iterations / sec: 35544.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 700
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 700
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.81703
+Log: Iterations / sec: 35498.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 700
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 700
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.80224
+Log: Iterations / sec: 35685.7
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 700
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 700
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.80383
+Log: Iterations / sec: 35665.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 700
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 700
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.80663
+Log: Iterations / sec: 35629.9
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 700
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 700
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.81307
+Log: Iterations / sec: 35548.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 700
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 1024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.16101
+Log: Iterations / sec: 31635.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 1024
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 1024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.67806
+Log: Iterations / sec: 37340.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 1024
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 1024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.693
+Log: Iterations / sec: 37133.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 1024
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 1024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.68822
+Log: Iterations / sec: 37199.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 1024
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 1024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.67263
+Log: Iterations / sec: 37416.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 1024
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 1024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.67213
+Log: Iterations / sec: 37423.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 1024
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 1024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.66979
+Log: Iterations / sec: 37456.1
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 1024
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 2024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.69618
+Log: Iterations / sec: 37089.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 2024
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 2024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.71817
+Log: Iterations / sec: 36789.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 2024
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 2024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.71818
+Log: Iterations / sec: 36789.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 2024
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 2024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.7219
+Log: Iterations / sec: 36739
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 2024
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 2024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.73235
+Log: Iterations / sec: 36598.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 2024
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 2024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.73049
+Log: Iterations / sec: 36623.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 2024
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 2024
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.72494
+Log: Iterations / sec: 36698
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 2024
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 4096
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.73137
+Log: Iterations / sec: 36611.7
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 4096
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 4096
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.80987
+Log: Iterations / sec: 35588.9
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 4096
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 4096
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.81854
+Log: Iterations / sec: 35479.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 4096
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 4096
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.80339
+Log: Iterations / sec: 35671
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 4096
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 4096
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.80695
+Log: Iterations / sec: 35625.8
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 4096
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 4096
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.81649
+Log: Iterations / sec: 35505.2
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 4096
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 4096
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.81314
+Log: Iterations / sec: 35547.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 4096
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 8192
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 2.80814
+Log: Iterations / sec: 35610.8
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 8192
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 8192
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.05023
+Log: Iterations / sec: 32784.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 8192
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 8192
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.04347
+Log: Iterations / sec: 32857.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 8192
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 8192
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.04295
+Log: Iterations / sec: 32862.8
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 8192
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 8192
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.04983
+Log: Iterations / sec: 32788.8
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 8192
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 8192
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.03941
+Log: Iterations / sec: 32901.1
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 8192
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 8192
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.04326
+Log: Iterations / sec: 32859.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 8192
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 16384
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.15244
+Log: Iterations / sec: 31721.4
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 16384
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 16384
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.7966
+Log: Iterations / sec: 26339.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 16384
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 16384
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.7927
+Log: Iterations / sec: 26366.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 16384
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 16384
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.80228
+Log: Iterations / sec: 26300
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 16384
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 16384
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.79197
+Log: Iterations / sec: 26371.5
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 16384
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 16384
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.80746
+Log: Iterations / sec: 26264.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 16384
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 16384
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 3.80186
+Log: Iterations / sec: 26302.9
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 16384
+THREAD_LIMIT: 2048
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 64
+bsub: NUM_TEAMS will be set to: 32768
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 4.72234
+Log: Iterations / sec: 21176
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 32768
+THREAD_LIMIT: 64
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 128
+bsub: NUM_TEAMS will be set to: 32768
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 5.36141
+Log: Iterations / sec: 18651.8
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 32768
+THREAD_LIMIT: 128
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 256
+bsub: NUM_TEAMS will be set to: 32768
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 5.37019
+Log: Iterations / sec: 18621.3
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 32768
+THREAD_LIMIT: 256
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 512
+bsub: NUM_TEAMS will be set to: 32768
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 5.36346
+Log: Iterations / sec: 18644.7
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 32768
+THREAD_LIMIT: 512
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1024
+bsub: NUM_TEAMS will be set to: 32768
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 5.37382
+Log: Iterations / sec: 18608.7
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 32768
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 1500
+bsub: NUM_TEAMS will be set to: 32768
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 5.35569
+Log: Iterations / sec: 18671.7
+Log: N: 100
+Log: Number of threads: 1
+NUM_TEAMS: 32768
+THREAD_LIMIT: 1500
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+bsub: THREAD_LIMIT will be set to: 2048
+bsub: NUM_TEAMS will be set to: 32768
+Log: Warmup...
+Log: Finished warmup...
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi (base)
+Log: Iterations: 100000
+Log: Execution time: 5.35476
+Log: Iterations / sec: 18675
+Log: N: 100
+Log: Number of threads: 1
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19952410: <omp_teams_thread_limit> in cluster <dcc> Done
+
+Job <omp_teams_thread_limit> was submitted from host <gbarlogin2> by user <s233091> in cluster <dcc> at Sun Jan 21 17:11:42 2024
+Job was executed on host(s) <32*n-62-12-81>, in queue <hpcintrogpu>, as user <s233091> in cluster <dcc> at Sun Jan 21 17:11:44 2024
+</zhome/c7/f/203083> was used as the home directory.
+</zhome/c7/f/203083/02614/HPC_assignment_3/src/part2/bsub> was used as the working directory.
+Started at Sun Jan 21 17:11:44 2024
+Terminated at Sun Jan 21 17:54:34 2024
+Results reported at Sun Jan 21 17:54:34 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+# 02614 - High-Performance Computing, January 2024
+# 
+# batch script to run matmult on a dedicated GPU server in the hpcintrogpu
+# queue
+#
+# Author: Bernd Dammann <bd@cc.dtu.dk>
+#         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
+#
+#BSUB -J omp_teams_thread_limit
+#BSUB -o output/omp_teams_thread_limit_%J.out
+#BSUB -e output/omp_teams_thread_limit_%J.err
+#BSUB -q hpcintrogpu
+#BSUB -n 32
+#BSUB -R "rusage[mem=2048]"
+#BSUB -W 1:00
+#BSUB -R "span[hosts=1]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+
+EXECUTABLE="poisson_j"
+
+# Tolerance is not actually used at these scripts, just there for the
+# sake of the argument
+# N_SIZES="50 100 200 400 800 1000"
+# THREADS="1 2 4 8 10 12 16 20 24 30 36 40"
+TOLERANCE="0.001"
+ITER_MAX=100000
+START_VALUE="0.0"
+EXTRA_ARGS=4
+
+N_DEFAULT=100
+# Experiment with these values for jacobi gpu
+# given this information
+# Multiprocessors = 114
+# Maximum number of threads per block = 1024 
+# NUM_TEAMS_LIST="64 114 128 256 512 1024"
+NUM_TEAMS_LIST="64 108 256 512 700 1024 2024 4096 8192 16384 32768"
+THREAD_LIMIT_LIST="64 128 256 512 1024 1500 2048"
+
+# load module for shared cuda libraries
+module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
+
+MAKE_THREADS=12
+
+cd ..
+for TEAM in $NUM_TEAMS_LIST; do
+    for THREAD in $THREAD_LIMIT_LIST; do
+        make clean
+        export NUM_TEAMS=$TEAM
+        export THREAD_LIMIT=$THREAD
+
+(... more ...)
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   2867.00 sec.
+    Max Memory :                                 109 MB
+    Average Memory :                             36.38 MB
+    Total Requested Memory :                     65536.00 MB
+    Delta Memory :                               65427.00 MB
+    Max Swap :                                   -
+    Max Processes :                              6
+    Max Threads :                                10
+    Run time :                                   2614 sec.
+    Turnaround time :                            2572 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <output/omp_teams_thread_limit_19952410.err> for stderr output of this job.
+
