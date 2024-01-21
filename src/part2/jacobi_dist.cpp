@@ -1,3 +1,6 @@
+/* jacobi_dist.cpp - Poisson problem in 3d
+ *
+ */
 #include "jacobi_dist.h"
 
 int jacobi_dist(double ***u_curr, double ***u_prev, double ***f, int N,

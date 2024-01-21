@@ -1,10 +1,17 @@
 /* jacobi.c - Poisson problem in 3d with omp
  *
  */
-#include <math.h>
 #include <omp.h>
 #include "jacobi_omp.h"
-#include "util.h"
+
+
+#ifndef _NUM_TEAMS
+#define _NUM_TEAMS 1000
+#endif
+
+#ifndef _THREAD_LIMIT
+#define _THREAD_LIMIT 2000
+#endif
 
 // See which version is better from the previous ones (fix the old version)
 int jacobi_omp(

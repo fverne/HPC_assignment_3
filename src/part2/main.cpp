@@ -1,9 +1,9 @@
 /* main.c - Poisson problem in 3D
  *
  */
+#include "util.h"
 #include "alloc3d.h"
 #include "print.h"
-#include "util.h"
 
 #ifdef _JACOBI
 #include "jacobi.h"
@@ -293,7 +293,7 @@ double ***solve_dist(int N, int iter_max, double tolerance, int start_T)
   std::cout << "Log: Number of iterations: " << iter << std::endl;
   std::cout << "Log: Number of threads: " << omp_get_max_threads() << std::endl;
   std::cout << "Log: N: " << N << std::endl;
-  std::cerr << _NUM_TEAMS << "\t" << _THREAD_LIMIT << "\t" << iter / exec_time << "\t" << iter <<< std::endl;
+  std::cerr << _NUM_TEAMS << "\t" << _THREAD_LIMIT << "\t" << iter / exec_time << "\t" << iter << std::endl;
 
   return u_curr;
 }
@@ -604,13 +604,13 @@ void main(int argc, char *argv[])
 
 #ifdef _JACOBI
   output_prefix = "jacobi";
-  // warmup();
+  warmup();
   solve_base(N, iter_max, tolerance, start_T);
 #endif
 
 #ifdef _JACOBI_ALLOC
   output_prefix = "jacobi_alloc";
-  // warmup();
+  warmup();
   u_curr = solve_alloc(N, iter_max, start_T);
 #endif
 
@@ -626,13 +626,13 @@ void main(int argc, char *argv[])
 
 #ifdef _JACOBI_DIST
   output_prefix = "jacobi_dist";
-  // warmup();
+  warmup();
   u_curr = solve_dist(N, iter_max, tolerance, start_T);
 #endif
 
 #ifdef _JACOBI_DUP
   output_prefix = "jacobi_dup";
-  // warmup();
+  warmup();
   u_curr = solve_dup(N, iter_max, start_T);
 #endif
 

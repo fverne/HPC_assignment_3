@@ -35,10 +35,13 @@ EXTRA_ARGS=4
 # load module for shared cuda libraries
 module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
 
+cd ..
+make clean && make -j 12 > /dev/null 2>&1
+
 for N in $N_SIZES; do
     for THREAD in $THREADS; do
         export OMP_NUM_THREADS=${THREAD:-1}
     echo "OMP_NUM_THREADS=$OMP_NUM_THREADS"
-    ../$EXECUTABLE $N $ITER_MAX $TOLERANCE $START_VALUE $EXTRA_ARGS
+    ./$EXECUTABLE $N $ITER_MAX $TOLERANCE $START_VALUE $EXTRA_ARGS
     done
 done

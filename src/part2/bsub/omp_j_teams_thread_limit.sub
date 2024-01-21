@@ -33,8 +33,9 @@ N_DEFAULT=100
 # given this information
 # Multiprocessors = 114
 # Maximum number of threads per block = 1024 
-NUM_TEAMS="64 114 128 256 512"
-THREAD_LIMIT="64 128 256 512 1024 1500 2048"
+# NUM_TEAMS_LIST="64 114 128 256 512 1024"
+TEAMS="64 108 256 512 700 1024 2024 4096 8192 16384 32768"
+THREAD_LIMIT_LIST="64 128 256 512 1024 1500 2048"
 
 # load module for shared cuda libraries
 module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
@@ -42,10 +43,15 @@ module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
 MAKE_THREADS=12
 
 cd ..
-for TEAM in $NUM_TEAMS; do
-    for THREAD in $THREAD_LIMIT; do
+for TEAM in $NUM_TEAMS_LIST; do
+    for THREAD in $THREAD_LIMIT_LIST; do
         make clean
-        make -j $MAKE_THREADS THREAD_LIMIT=$THREAD NUM_TEAMS=$TEAM > /dev/null 2>&1
+        export NUM_TEAMS=$TEAM
+        export THREAD_LIMIT=$THREAD
+        echo -e "bsub: THREAD_LIMIT will be set to: $THREAD_LIMIT"
+        echo -e "bsub: NUM_TEAMS will be set to: $NUM_TEAMS"
+        make  > /dev/null 2>&1
+        # -j $MAKE_THREADS
         ./$EXECUTABLE $N_DEFAULT $ITER_MAX $TOLERANCE $START_VALUE $EXTRA_ARGS 
     done    
 done

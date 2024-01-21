@@ -3,6 +3,7 @@
  */
 #include "jacobi_expand.h"
 
+
 int jacobi_expand(double ***u_curr, double ***u_prev, double ***f,
   int N, int iter_max, double tolerance) {
 

@@ -2,7 +2,6 @@
  *
  */
 #include "jacobi.h"
-#include <math.h>
 
 int jacobi(double ***u_curr, double ***u_prev, double ***f, int N,
            int max_iterations) {

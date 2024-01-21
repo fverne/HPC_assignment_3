@@ -5,9 +5,8 @@
 #include <stdlib.h>
 
 // Default values for num_teams and threads according to the hardware
-
 #ifndef _NUM_TEAMS
-#define _NUM_TEAMS 128
+#define _NUM_TEAMS 114
 #endif
 
 #ifndef _THREAD_LIMIT

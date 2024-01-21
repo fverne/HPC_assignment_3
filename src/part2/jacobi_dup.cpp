@@ -1,8 +1,7 @@
 /* jacobi_dup.cpp - Poisson problem in 3d
  *
  */
-#include "util.h"
-#include <math.h>
+#include "jacobi_dup.h"
 
 int jacobi_dup(double ***u_curr_0, double ***u_prev_0, double ***f_0, double ***u_curr_1, double ***u_prev_1, double ***f_1, int N, int max_iterations)
 {

@@ -7,9 +7,9 @@
 # Author: Bernd Dammann <bd@cc.dtu.dk>
 #         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
 #
-#BSUB -J omp_jalloc
-#BSUB -o output/omp_jalloc_%J.out
-#BSUB -e output/omp_jalloc_%J.err
+#BSUB -J omp_j
+#BSUB -o output/omp_j_%J.out
+#BSUB -e output/omp_j_%J.err
 #BSUB -q hpcintrogpu
 #BSUB -n 32
 #BSUB -R "rusage[mem=2048]"
@@ -17,7 +17,7 @@
 #BSUB -R "span[hosts=1]"
 #BSUB -gpu "num=1:mode=exclusive_process"
 
-EXECUTABLE="poisson_ja"
+EXECUTABLE="poisson_j"
 
 # Tolerance is not actually used at these scripts, just there for the
 # sake of the argument
@@ -41,7 +41,7 @@ module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
 
 # TODO: Fill this out
 # Still waiting for the script to run for these values to get finalized
-THREAD_IDEAL=512
+THREAD_IDEAL=114
 TEAM_IDEAL=1024
 MAKE_THREADS=12
 

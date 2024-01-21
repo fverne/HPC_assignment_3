@@ -1,8 +1,7 @@
 /* jacobi.c - Poisson problem in 3d
  *
  */
-#include "util.h"
-#include <math.h>
+#include "jacobi_alloc.h"
 
 int jacobi_alloc(double ***u_curr, double ***u_prev, double ***f, int N, int max_iterations) {
   int iter = 0;

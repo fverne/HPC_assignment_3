@@ -1,5 +1,8 @@
-NUM_TEAMS ?= 114
 THREAD_LIMIT ?= 1024
+NUM_TEAMS ?= 114
+
+$(info NUM_TEAMS: $(NUM_TEAMS))
+$(info THREAD_LIMIT: $(THREAD_LIMIT))
 
 # Targets
 TARGET_J = poisson_j
@@ -8,7 +11,6 @@ TARGET_JOMP = poisson_jomp
 TARGET_JDIST = poisson_jdist
 TARGET_JEXPAND = poisson_jexpand
 TARGET_JDUP = poisson_jdup
-
 
 # Main object files
 MAIN_J	= main_j.o
@@ -39,9 +41,9 @@ ISA	=
 PARA	=
 INC   =
 LIBS	=
-EXTRA = -DTHREAD_LIMIT=$(THREAD_LIMIT) -DNUM_TEAMS=$(NUM_TEAMS)
+EXTRA =-v -D_THREAD_LIMIT=$(THREAD_LIMIT) -D_NUM_TEAMS=$(NUM_TEAMS)
 
-CXXFLAGS = $(OPT) $(INC) $(ISA) $(PARA) $(EXTRA)
+CXXFLAGS = $(OPT) $(EXTRA)
 
 all: $(TARGET_J) $(TARGET_JA) $(TARGET_JOMP) $(TARGET_JDIST) $(TARGET_JEXPAND) $(TARGET_JDUP)
 
