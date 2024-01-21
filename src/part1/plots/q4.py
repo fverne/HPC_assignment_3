@@ -12,7 +12,7 @@ mflops_mnk = [238.761, 1922.252, 7885.296, 56547.367, 59601.285, 62606.985, 6343
 mflops_asy = [78.387, 685.267, 6756.832, 37492.798, 266588.520, 671703.795, 854206.969, 817055.976]
 
 # Set up the plotting layout
-fig, ax1 = plt.subplots(figsize=(14, 7))
+fig, ax1 = plt.subplots(figsize=(8, 4))
 
 # Bar chart for running times
 bar_width = 0.35
@@ -30,6 +30,8 @@ line2 = ax2.plot(index, mflops_asy, label='asy_offload MFlops', color='c', marke
 ax1.set_xlabel('Matrix Size')
 ax1.set_ylabel('Running Time (s)', color='b')
 ax2.set_ylabel('MFlops', color='r')
+ax1.set_yscale("log")
+ax2.set_yscale("log")
 ax1.set_title('Comparison of Running Time and MFlops Performance')
 ax1.set_xticks([i + bar_width / 2 for i in index])
 ax1.set_xticklabels(sizes)
