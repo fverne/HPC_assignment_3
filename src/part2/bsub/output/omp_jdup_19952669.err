@@ -1,0 +1,11 @@
+Loaded module: gcc/13.2.0-binutils-2.41
+Error: Failed to allocate memory using omp_target_alloc.
+Error: Array u_curr: allocation failed
+Error: Failed to allocate memory using omp_target_alloc.
+Error: Array u_curr: allocation failed
+Error: Failed to allocate memory using omp_target_alloc.
+Error: Array u_curr: allocation failed
+Error: Failed to allocate memory using omp_target_alloc.
+Error: Array u_curr: allocation failed
+Error: Failed to allocate memory using omp_target_alloc.
+Error: Array u_curr: allocation failed

@@ -35,7 +35,7 @@ N_DEFAULT=100
 # Maximum number of threads per block = 1024 
 # NUM_TEAMS="64 114 128 256 512"
 # THREAD_LIMIT="64 128 256 512 1024 1500 2048"
-N_SIZES="50 100 200 400 800 1000 2000"
+N_SIZES="50 100 200 400"
 # load module for shared cuda libraries
 module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
 

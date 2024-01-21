@@ -1,0 +1,228 @@
+NUM_TEAMS: 114
+THREAD_LIMIT: 1024
+/bin/rm -f *.o poisson_j poisson_ja poisson_jomp poisson_jdist  poisson_jexpand poisson_jdup
+OMP_NUM_THREADS=1
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 745.528
+Log: Iterations / sec: 13.4133
+Log: N: 400
+Log: Number of threads: 1
+OMP_NUM_THREADS=2
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 387.439
+Log: Iterations / sec: 25.8105
+Log: N: 400
+Log: Number of threads: 2
+OMP_NUM_THREADS=4
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 202.724
+Log: Iterations / sec: 49.3283
+Log: N: 400
+Log: Number of threads: 4
+OMP_NUM_THREADS=8
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 113.527
+Log: Iterations / sec: 88.0848
+Log: N: 400
+Log: Number of threads: 8
+OMP_NUM_THREADS=10
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 103.937
+Log: Iterations / sec: 96.2119
+Log: N: 400
+Log: Number of threads: 10
+OMP_NUM_THREADS=16
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 94.5405
+Log: Iterations / sec: 105.775
+Log: N: 400
+Log: Number of threads: 16
+OMP_NUM_THREADS=20
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 80.4003
+Log: Iterations / sec: 124.378
+Log: N: 400
+Log: Number of threads: 20
+OMP_NUM_THREADS=30
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 79.7114
+Log: Iterations / sec: 125.453
+Log: N: 400
+Log: Number of threads: 30
+OMP_NUM_THREADS=36
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+Log: Jacobi Expand
+Log: Iterations: 10000
+Log: Execution time: 118.254
+Log: Iterations / sec: 84.5635
+Log: N: 400
+Log: Number of threads: 36
+OMP_NUM_THREADS=40
+Log: Number of devices: 1
+Log: Default device: 0
+Log: Initial device: -1
+Log: Allocating on host...
+Log: Allocation finished...
+Log: Initializing arrays on host...
+Log: Initializing arrays on host finished...
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 19952604: <omp_jexpand> in cluster <dcc> Exited
+
+Job <omp_jexpand> was submitted from host <n-62-11-46> by user <s233091> in cluster <dcc> at Sun Jan 21 22:01:14 2024
+Job was executed on host(s) <32*n-62-12-81>, in queue <hpcintrogpu>, as user <s233091> in cluster <dcc> at Sun Jan 21 22:01:14 2024
+</zhome/c7/f/203083> was used as the home directory.
+</zhome/c7/f/203083/02614/HPC_assignment_3/src/part2/bsub> was used as the working directory.
+Started at Sun Jan 21 22:01:14 2024
+Terminated at Sun Jan 21 22:34:49 2024
+Results reported at Sun Jan 21 22:34:49 2024
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+# 02614 - High-Performance Computing, January 2024
+# 
+# batch script to run matmult on a dedicated GPU server in the hpcintrogpu
+# queue
+#
+# Author: Bernd Dammann <bd@cc.dtu.dk>
+#         Hans Henrik Brandenborg Sørensen <hhbs@dtu.dk>
+#
+#BSUB -J omp_jexpand
+#BSUB -o output/omp_jexpand_%J.out
+#BSUB -e output/omp_jexpand_%J.err
+#BSUB -q hpcintrogpu
+#BSUB -n 32
+#BSUB -R "rusage[mem=2048]"
+#BSUB -W 1:00
+#BSUB -R "span[hosts=1]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+
+# EXECUTABLE="poisson_jexpand"
+# just pass executable poisson_jomp
+# or pass poisson_expand (same script to compare both)
+# echo -e "Executable name: ${EXECUTABLE}"
+EXECUTABLE="poisson_jexpand"
+
+# Tolerance is not actually used at these scripts, just there for the
+# sake of the argument
+N_SIZES="400"
+THREADS="1 2 4 8 10 16 20 30 36 40"
+TOLERANCE="0.001"
+ITER_MAX=10000
+START_VALUE="0.0"
+EXTRA_ARGS=4
+
+# load module for shared cuda libraries
+module load /appl9/nvhpc/2023_2311/modulefiles/nvhpc-nompi/23.11
+
+cd ..
+make clean && make -j 12  > /dev/null 2>&1
+
+for N in $N_SIZES; do
+    for THREAD in $THREADS; do
+        export OMP_NUM_THREADS=${THREAD:-1}
+    echo "OMP_NUM_THREADS=$OMP_NUM_THREADS"
+    ./$EXECUTABLE $N $ITER_MAX $TOLERANCE $START_VALUE $EXTRA_ARGS
+    done
+done
+
+------------------------------------------------------------
+
+TERM_OWNER: job killed by owner.
+Exited with exit code 130.
+
+Resource usage summary:
+
+    CPU time :                                   16617.00 sec.
+    Max Memory :                                 51 MB
+    Average Memory :                             39.59 MB
+    Total Requested Memory :                     65536.00 MB
+    Delta Memory :                               65485.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                48
+    Run time :                                   2034 sec.
+    Turnaround time :                            2015 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <output/omp_jexpand_19952604.err> for stderr output of this job.
+
