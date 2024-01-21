@@ -12,18 +12,18 @@ int jacobi(double ***u_curr, double ***u_prev, double ***f, int N,
   double delta_2 = pow2(delta);
   
   // Put the map outside the inner loops for better performance
+  // Jacobi with simple map
+  // teams distribute parallel
+  // Multiprocessors = 114
+  // Maximum number of threads per block = 1024 
+  // thread_limit =
+  // num_teams = 114 (as multiprocessors)
+  // 
+  // Collapse (3) --> 3 nested loops
+  // Try rounding up to 128 for oversubscription to hide latency
+  // 1024 -> thread limit per team (try 512 as well)
   #pragma omp target data map(to: u_prev[0:N][0:N][0:N], f[0:N][0:N][0:N]) map(tofrom: u_curr[0:N][0:N][0:N])
   for (iter = 0; iter < max_iterations; iter++) { 
-    // Jacobi with simple map
-    // teams distribute parallel
-    // Multiprocessors = 114
-    // Maximum number of threads per block = 1024 
-    // thread_limit =
-    // num_teams = 114 (as multiprocessors)
-    // 
-    // Collapse (3) --> 3 nested loops
-    // Try rounding up to 128 for oversubscription to hide latency
-    // 1024 -> thread limit per team (try 512 as well)
     #pragma omp target teams distribute parallel for num_teams(_NUM_TEAMS) thread_limit(_THREAD_LIMIT) collapse(3)
     for (int i = 1; i < N - 1; i++)
       for (int j = 1; j < N - 1; j++)
