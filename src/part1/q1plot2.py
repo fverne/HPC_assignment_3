@@ -30,7 +30,7 @@ iterations_lib_16_threads = [67047.808, 187018.319, 384814.539, 485318.683, 5735
 thread_numbers = [1, 2, 4, 6, 8, 10, 12, 14, 16]
 
 # Get unique labels for each combination of implementation and thread number
-labels_mnk_omp = [f'mnk_omp - {n} thread(s)' for n in thread_numbers]
+labels_mnk_omp = [f'mkn_omp - {n} thread(s)' for n in thread_numbers]
 labels_lib = [f'lib - {n} thread(s)' for n in thread_numbers]
 labels = labels_mnk_omp + labels_lib
 
